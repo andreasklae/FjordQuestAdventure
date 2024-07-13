@@ -1,0 +1,279 @@
+:root {
+    --background-color:  #003152;
+    --text-color: white;
+
+    --primary-color: #00558c;
+    --secondary-color: #85c1ef;
+    --accent-color: #c86a28;
+
+    --head-font: "Playfair Display", serif;
+    --head-spacing: 0.15em;
+    --second-font: "Bebas Neue", sans-serif;
+}
+
+@keyframes slideUp {
+    0%, 5%{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    45%{
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+.slideUp{
+    animation: slideUp, ease;
+    animation-timeline: view();
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(100vw);
+    }
+    25%{
+        transform: translateX(0);
+    }
+}
+
+.slideRight{
+    animation: slideRight, ease;
+    animation-timeline: view();
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(-100vw);
+    }
+    25%{
+        transform: translateX(0);
+    }
+}
+
+.slideLeft{
+    animation: slideLeft, ease;
+    animation-timeline: view();
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+h1, h2{
+    font-family: var(--head-font);
+    color: white;  
+}
+h3, h3 a{
+    font-family: var(--head-font);
+    font-size: .8rem;
+    color: white;
+}
+
+p{
+    font-family: var(--second-font);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 10px 20px;
+    align-items: center; /* Centers items vertically */
+    box-sizing: border-box;
+}
+
+#logoTop {
+    float: left; /* Aligns the image to the left */
+    width: 80px; /* Sets the width of the image to make it small. Adjust as needed */
+    height: auto; /* Maintains the aspect ratio of the image */
+    margin-right: 10px; 
+    
+}
+.logoContainer{
+    flex: 1;
+}
+
+.top h3 a{
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: var(--head-spacing);
+    
+    display: inline-block;
+    padding: 10px 5px;
+    margin-left: 50px;
+    position: relative;
+    color: white;
+
+    align-self:flex-end ;
+}
+.top h3 a:after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+    width: 0;
+}
+
+.top h3 a:hover::after {
+    width: 100%;
+    left: 0; 
+}
+  
+.imgContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#backgroundPhoto, #backgroundLogo {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centers the image */
+    transform: translateX(-50%); /* Adjusts for center alignment */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#backgroundLogo {
+    width: 60%;
+    height: auto; /* Maintains aspect ratio */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centers it perfectly */
+    max-width: 100%; /* Ensures it doesn't overflow the viewport */
+    z-index: 2;
+}
+
+#backgroundPhoto {
+    z-index: 1;
+}
+  
+  
+
+.intro{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.intro h1{
+    margin: 30px;
+}
+
+.intro1, .intro2{
+    width: 40vw;
+}
+
+
+.featured {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.ad{
+    position: relative; /* Needed for absolute positioning of text-content */
+    overflow: hidden; /* Ensures the img does not overflow the div */
+    max-height: 20vw;
+}
+
+.ad img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the div without stretching */
+    object-position: center; /* Center the image */
+}
+
+.adWide {
+    flex: 0 0 60%; /* Do not grow, do not shrink, start at 60% width */
+    max-width: 60%; /* Ensures it does not grow beyond 60% width */
+}
+
+.adNarrow{
+    flex: 0 0 40%; /* Do not grow, do not shrink, start at 40% width */
+    max-width: 40%; /* Ensures it does not grow beyond 40% width */
+}
+
+.text-content {
+    position: absolute;
+    bottom: 0; /* Aligns text to the bottom */
+    left: 0; /* Aligns text to the left */
+    padding: 10px; /* Adds some spacing inside the text-content area */
+    color: white; /* Optional: Changes text color for better contrast */
+    width: 100%; /* Ensures the text content spans the entire width of its parent */
+    box-sizing: border-box; /* Ensures padding does not add to the total width */
+}
+
+.text-content h2, .text-content p {
+    margin: 0; /* Removes default margin */
+    margin-left: 10px;
+    text-align: left; /* Ensures text is aligned to the left */
+}
+
+.featured a{
+    color: white;
+    text-decoration: none;
+}
+
+.people{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.person{
+    width: 25vw;
+    padding: 2vw;
+    align-items: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.person img{
+    width: 100%;
+    border-radius: 20px;
+}
+.person p{
+    text-align: left;
+    line-height: 1.0;
+}
+.person h2{
+    font-size: 3.2vw;
+}
+.person p{
+    font-size: 2vw;
+}
+
