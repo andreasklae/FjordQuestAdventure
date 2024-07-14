@@ -25,7 +25,7 @@ let paragraph1 = `
 `
 
 // second header 
-let header2 = "Something About yourself"
+let header2 = "Something else"
 
 // the paragraph under
 let paragraph2 = `
@@ -47,22 +47,75 @@ class FeaturedBox{
     }
 }
 
-// here you can edit each box. Only edit what is in between the ""
-let box1 = new FeaturedBox(
-    header = "ski trip",
-    description = "take a ski trip in the fjords",
-    backgroundImage = "bilder/ski.jpg"
-)
+let boxes = [
+    // here you can edit each box. Only edit what is in between the ""
+    new FeaturedBox(
+        header = "ski trip",
+        description = "take a ski trip in the fjords",
+        backgroundImage = "bilder/featured/ski.jpg"
+    ),
+    new FeaturedBox(
+        header = "Hiking",
+        description = "Go on a hike in the mountains",
+        backgroundImage = "bilder/featured/hiking.jpg"
+    ),
+    new FeaturedBox(
+        header = "Hotels",
+        description = "Sleep comfortably",
+        backgroundImage = "bilder/featured/hotel.jpg"
+    ),
+    new FeaturedBox(
+        header = "camping",
+        description = "Go camping in nature",
+        backgroundImage = "bilder/featured/camping.jpg"
+    ),
+    new FeaturedBox(
+        header = "Rent a car",
+        description = "Take a scenic roadtrip",
+        backgroundImage = "bilder/featured/car.jpg"
+    ),
+    new FeaturedBox(
+        header = "Biking",
+        description = "Go biking in the terrain",
+        backgroundImage = "bilder/featured/biking.jpg"
+    )
+]
 
-let box2 = new FeaturedBox(
-    header = "Hiking",
-    description = "Go on a hike in the mountains",
-    backgroundImage = "bilder/package_watermark_89cusilu (1)/demo-images/4.jpg"
-)
+// the section with the people
 
-let boxes = [box1]
-boxes.push(box2)
+// do not edit this!
+class Person{
+    constructor(name, email, tlf, picture){
+        this.name = name
+        this.email = email
+        this.tlf = tlf
+        this.picture = picture
+    }
+}
 
+// here you can edit info for each employee to be shown on the home page
+let employees = [
+    new Person(
+        name = "Name",
+        email = "sample@mail.com",
+        tlf = "900 00 001",
+        picture = "bilder/people/person1.webp"
+    ),
+    new Person(
+        name = "Name",
+        email = "sample@mail.com",
+        tlf = "900 00 001",
+        picture = "bilder/people/person2.webp"
+    ),
+    new Person(
+        name = "Name",
+        email = "sample@mail.com",
+        tlf = "900 00 001",
+        picture = "bilder/people/person3.webp"
+    )
+]
+
+// do not edit beyond this point
 
 // sets the first texts
 document.getElementById("header1").innerHTML = header1
@@ -73,13 +126,22 @@ document.getElementById("paragraph2").innerHTML = paragraph2
 
 // iterates through the boxes
 for (let i = 0; i < boxes.length; i++) {
-    let narrowOrWide
-    if(i % 2 == 0){
-        narrowOrWide = "ad adNarrow slideRight"
+    let narrowOrWide = "ad"
+
+    if ((i % 4 === 0) || (i % 4 === 3)){
+        narrowOrWide += " adWide"
+    }
+    else {
+        narrowOrWide += " adNarrow"
+    }
+
+    if (i % 2 == 0){
+        narrowOrWide += " slideLeft"
     }
     else{
-        narrowOrWide = "ad adWide slideLeft"
+        narrowOrWide += " slideRight"
     }
+    
     document.getElementById("featured").innerHTML +=
     `
        <div class="${narrowOrWide}">
@@ -96,4 +158,17 @@ for (let i = 0; i < boxes.length; i++) {
    `
 }
 
+// iterates throguh the people
+for (let i = 0; i < employees.length; i++) {
+    
+    document.getElementById("peopleBoxes").innerHTML +=
+    `
+    <div class="person">
+        <img src="${employees[i].picture}" alt="">
+        <h2>${employees[i].name}</h2>
+        <p>Email: ${employees[i].email}</p>
+        <p>Tlf: ${employees[i].tlf}</p>
+    </div>
+   `
+}
 
