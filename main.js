@@ -25,7 +25,7 @@ let paragraph1 = `
 `
 
 // second header 
-let header2 = "Something else"
+let header2 = "Something engaging"
 
 // the paragraph under
 let paragraph2 = `
@@ -122,41 +122,58 @@ document.getElementById("header1").innerHTML = header1
 document.getElementById("paragraph1").innerHTML = paragraph1
 document.getElementById("header2").innerHTML = header2
 document.getElementById("paragraph2").innerHTML = paragraph2
+console.log(window.innerWidth)
 
+// Function to check if the device is a phone
+const onPhone = function() {
+    return window.innerWidth < 700;
+};
 
-// iterates through the boxes
-for (let i = 0; i < boxes.length; i++) {
-    let narrowOrWide = "ad"
+// Function to update the layout of the boxes
+const updateFeturedboxLayout = function() {
+    const featured = document.getElementById("featured");
+    featured.innerHTML = ''; // Clear existing content
 
-    if ((i % 4 === 0) || (i % 4 === 3)){
-        narrowOrWide += " adWide"
-    }
-    else {
-        narrowOrWide += " adNarrow"
-    }
+    // Iterate through the boxes
+    for (let i = 0; i < boxes.length; i++) {
+        let style = "ad";
 
-    if (i % 2 == 0){
-        narrowOrWide += " slideLeft"
+        if (onPhone()) {
+            style += " adFull slideLeft";
+        } else {
+            if ((i % 4 === 0) || (i % 4 === 3)) {
+                style += " adWide";
+            } else {
+                style += " adNarrow";
+            }
+
+            if (i % 2 === 0) {
+                style += " slideLeft";
+            } else {
+                style += " slideRight";
+            }
+        }
+
+        // Add the new box to the featured section
+        featured.innerHTML += `
+            <div class="${style}">
+                <a href="">
+                    <img src="${boxes[i].backgroundImage}">
+                    <div class="text-content">
+                        <h2>${boxes[i].header}</h2>
+                        <p>${boxes[i].description}</p>
+                    </div>
+                </a>
+            </div>
+        `;
     }
-    else{
-        narrowOrWide += " slideRight"
-    }
-    
-    document.getElementById("featured").innerHTML +=
-    `
-       <div class="${narrowOrWide}">
-       <a href="">
-           <img src="${boxes[i].backgroundImage}">
-           <div class="text-content">
-               <h2>${boxes[i].header}</h2>
-               <p> 
-                ${boxes[i].description}
-               </p>
-           </div>
-       </a>
-       </div>
-   `
-}
+};
+
+// Initial call to apply the layout when the page loads
+updateFeturedboxLayout();
+
+// Add an event listener to handle window resizing
+window.addEventListener('resize', updateFeturedboxLayout);
 
 // iterates throguh the people
 for (let i = 0; i < employees.length; i++) {

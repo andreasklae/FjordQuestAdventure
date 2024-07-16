@@ -68,14 +68,18 @@ html, body {
     background-color: var(--background-color);
     overflow-x: hidden;
 }
-
+h1{
+    font-size: 3em;
+}
+p{
+    font-size: 1.2m;
+}
 h1, h2{
     font-family: var(--head-font);
     color: white;  
 }
 h3, h3 a{
     font-family: var(--head-font);
-    font-size: .8rem;
     color: white;
 }
 
@@ -201,7 +205,6 @@ p{
 .ad{
     position: relative; /* Needed for absolute positioning of text-content */
     overflow: hidden; /* Ensures the img does not overflow the div */
-    max-height: 20vw;
 }
 
 .ad img {
@@ -214,11 +217,18 @@ p{
 .adWide {
     flex: 0 0 60%; /* Do not grow, do not shrink, start at 60% width */
     max-width: 60%; /* Ensures it does not grow beyond 60% width */
+    max-height: 20vw;
 }
 
-.adNarrow{
+.adNarrow {
     flex: 0 0 40%; /* Do not grow, do not shrink, start at 40% width */
     max-width: 40%; /* Ensures it does not grow beyond 40% width */
+    max-height: 20vw;
+}
+
+.adFull{
+    width: 100%;   /* Set the width to 100% of the viewport width */
+    height: 150px;
 }
 
 .text-content {
@@ -247,7 +257,6 @@ p{
     justify-content: space-evenly;
     margin-top: 50px;
     margin-bottom: 50px;
-
 }
 
 .person{
@@ -274,6 +283,6 @@ p{
     font-size: 3.2vw;
 }
 .person p{
-    font-size: 2vw;
+    font-size: 2.5vw;
 }
 
