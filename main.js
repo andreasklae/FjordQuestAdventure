@@ -16,7 +16,7 @@ let header1 = "Something interesting"
 
 // the paragraph under
 let paragraph1 = `
-    something else that is interesting and engaging for the user.
+    something else djkfbkd that is interesting and engaging for the user.
     Bla bla you should fill in something here
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
     molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
