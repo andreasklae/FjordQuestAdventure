@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fjord Quest Adventure</title>
+    <link rel="icon" href="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +17,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top">
-        <div class="logoContainer">
-            <img id="logoTop" src="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" alt="">
-        </div> <h3> <a href="">Discover</a> </h3>
-       <h3> <a href="">About us</a> </h3> 
-    </div>
-
     <div id="content">
         <div id="main-content">
             <div class="imgContainer">
+                <div class="top">
+                    <div class="logoContainer">
+                        <img id="logoTop" src="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" alt="">
+                    </div> 
+                    <div id="topButtons">
+                        
+                    </div> 
+                     
+                </div>
                 <img id="backgroundLogo" src="bilder/brand_images/package_watermark_89cusilu (1)/white/full/white_logo_transparent_background.png" alt="">
                 <img id="backgroundPhoto" src="bilder/Norway_Lofoten_Mountains_Winter_Bay_Snow_566882_1600x1200.jpg" alt="">
             </div>
 
 
-            <div class="intro slideUp">
+            <div id="firstTexts" class="intro slideUp">
                 <div class="intro1">
                     <h1 id="header1"></h1>
                     <p id="paragraph1"></p>
@@ -41,22 +44,30 @@
                     <p id="paragraph2"></p>
                 </div>
             </div>
-            
-
             <div id="featured"></div>
 
-            <h1>The People</h1>
-            <div id="peopleBoxes" class="people slideUp"> 
-                
+            <div class="about slideUp">
+                <h1>About Us</h1>
+                <p id="aboutUs"></p>
+            </div>
+            <div class="about slideUp">
+                <h1>About Sunnmøre</h1>
+                <p id="aboutSm"></p>
             </div>
         </div>
     </div>
-
-    <div>
-        
-    </div>
-
     
+    <footer id="footer">
+        <div class="logoContainer" style="display: flex;">
+            <img id="logoTop" style="margin-right: 20px;" src="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" alt="">
+            <h2>Fjord Quest Adventure</h2>
+        </div>
+        <div id="footerContent">
+
+        </div>
+    </footer>
+    
+
 </body>
 <script src="main.js"></script>
 </html>

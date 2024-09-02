@@ -36,14 +36,29 @@ let paragraph2 = `
     optio, eaque rerum! Provident similique accusantium...
 `
 
+let aboutUs = `
+    Something about us that is interesting and fun for the user to read.
+`
+
+let aboutSm = `
+    Something about us that is interesting and fun for the user to read.
+`
+
+// your email
+let email = "support@fqa.no"
+
+// your phone nmbr
+let phone = "+47 123 45 678"
+
 // the boxes of featured trips:
 
 // do not edit this!
 class FeaturedBox{
-    constructor(header, description, backgroundImage){
+    constructor(header, description, backgroundImage, link){
         this.header = header
         this.description = description
         this.backgroundImage = backgroundImage
+        this.link = link
     }
 }
 
@@ -52,66 +67,38 @@ let boxes = [
     new FeaturedBox(
         header = "ski trip",
         description = "take a ski trip in the fjords",
-        backgroundImage = "bilder/featured/ski.jpg"
+        backgroundImage = "bilder/featured/ski.jpg",
+        link = "#"
     ),
     new FeaturedBox(
         header = "Hiking",
         description = "Go on a hike in the mountains",
-        backgroundImage = "bilder/featured/hiking.jpg"
+        backgroundImage = "bilder/featured/hiking.jpg",
+        link = "#"
     ),
     new FeaturedBox(
         header = "Hotels",
         description = "Sleep comfortably",
-        backgroundImage = "bilder/featured/hotel.jpg"
+        backgroundImage = "bilder/featured/hotel.jpg",
+        link = "#"
     ),
     new FeaturedBox(
         header = "camping",
         description = "Go camping in nature",
-        backgroundImage = "bilder/featured/camping.jpg"
+        backgroundImage = "bilder/featured/camping.jpg",
+        link = "#"
     ),
     new FeaturedBox(
         header = "Rent a car",
         description = "Take a scenic roadtrip",
-        backgroundImage = "bilder/featured/car.jpg"
+        backgroundImage = "bilder/featured/car.jpg",
+        link = "#"
     ),
     new FeaturedBox(
         header = "Biking",
         description = "Go biking in the terrain",
-        backgroundImage = "bilder/featured/biking.jpg"
-    )
-]
-
-// the section with the people
-
-// do not edit this!
-class Person{
-    constructor(name, email, tlf, picture){
-        this.name = name
-        this.email = email
-        this.tlf = tlf
-        this.picture = picture
-    }
-}
-
-// here you can edit info for each employee to be shown on the home page
-let employees = [
-    new Person(
-        name = "Name",
-        email = "sample@mail.com",
-        tlf = "900 00 001",
-        picture = "bilder/people/person1.webp"
-    ),
-    new Person(
-        name = "Name",
-        email = "sample@mail.com",
-        tlf = "900 00 001",
-        picture = "bilder/people/person2.webp"
-    ),
-    new Person(
-        name = "Name",
-        email = "sample@mail.com",
-        tlf = "900 00 001",
-        picture = "bilder/people/person3.webp"
+        backgroundImage = "bilder/featured/biking.jpg",
+        link = "#"
     )
 ]
 
@@ -127,7 +114,60 @@ console.log(window.innerWidth)
 // Function to check if the device is a phone
 const onPhone = function() {
     return window.innerWidth < 700;
+    
 };
+
+function setNav(){
+    if(!onPhone()){
+        document.getElementById("topButtons").innerHTML = `
+            <h3> <a href="">Discover</a> </h3>
+            <h3> <a href="">Contact us</a> </h3>
+            `
+    }
+    else{
+        document.getElementById("topButtons").innerHTML = hamburgerMenu();
+        const hamMenu = document.querySelector(".ham-menu");
+
+        const offScreenMenu = document.querySelector(".off-screen-menu");
+
+        hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        offScreenMenu.classList.toggle("active");
+        });
+    }
+}
+setNav();
+window.addEventListener('resize', setNav);
+
+
+function hamburgerMenu(){
+    return `
+    <div class="off-screen-menu">
+        <h3> <a href="">Discover</a> </h3>
+        <h3> <a href="">Contact us</a> </h3>
+    </div>
+
+    <nav>
+      <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    `
+}
+
+function updateIntro(){
+    if(onPhone()){
+        document.getElementById("firstTexts").className = "about slideUp";
+    }
+    else{
+        document.getElementById("firstTexts").className = "intro slideUp";
+    }
+}
+updateIntro();
+window.addEventListener('resize', updateIntro);
+
 
 // Function to update the layout of the boxes
 const updateFeturedboxLayout = function() {
@@ -157,7 +197,7 @@ const updateFeturedboxLayout = function() {
         // Add the new box to the featured section
         featured.innerHTML += `
             <div class="${style}">
-                <a href="">
+                <a href="${boxes[i].link}">
                     <img src="${boxes[i].backgroundImage}">
                     <div class="text-content">
                         <h2>${boxes[i].header}</h2>
@@ -175,17 +215,39 @@ updateFeturedboxLayout();
 // Add an event listener to handle window resizing
 window.addEventListener('resize', updateFeturedboxLayout);
 
-// iterates throguh the people
-for (let i = 0; i < employees.length; i++) {
-    
-    document.getElementById("peopleBoxes").innerHTML +=
-    `
-    <div class="person">
-        <img src="${employees[i].picture}" alt="">
-        <h2>${employees[i].name}</h2>
-        <p>Email: ${employees[i].email}</p>
-        <p>Tlf: ${employees[i].tlf}</p>
-    </div>
-   `
+document.getElementById("aboutUs").innerHTML = aboutUs
+document.getElementById("aboutSm").innerHTML = aboutSm
+
+function setFooter(){
+    if(onPhone()){
+        document.getElementById("footerContent").innerHTML = `
+            <p></p>
+            <h3>Reach us</h3>
+            <p id="Email">${email}</p>
+            <p id="Phone">${phone}</p>
+            <h1></h1>
+            <h3>Socials</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            `
+    }
+    else{
+        document.getElementById("footerContent").innerHTML = `
+            <div style = "display: flex;">
+                <div style = "display: block; margin-right: 40vw;">
+                    <h2>Reach us</h2>
+                    <p id="Email">${email}</p>
+                    <p id="Phone">${phone}</p>
+                </div>
+                <div style = "display: block;">
+                    <h2>Socials</h2>
+                    <p>Instagram</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+            `
+    }
 }
+setFooter();
+window.addEventListener('resize', setFooter);
 
