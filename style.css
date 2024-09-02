@@ -3,7 +3,7 @@
     --text-color: white;
 
     --primary-color: #00558c;
-    --secondary-color: #85c1ef;
+    --secondary-color: #c5e4fb;
     --accent-color: #c86a28;
 
     --head-font: "Playfair Display", serif;
@@ -118,6 +118,8 @@ p{
 }
 .logoContainer{
     flex: 1;
+    display: flex;
+    align-items: center;
 }
 #topButtons {
     display: flex;

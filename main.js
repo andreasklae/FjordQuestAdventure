@@ -114,14 +114,13 @@ console.log(window.innerWidth)
 // Function to check if the device is a phone
 const onPhone = function() {
     return window.innerWidth < 700;
-    
 };
 
 function setNav(){
     if(!onPhone()){
         document.getElementById("topButtons").innerHTML = `
             <h3> <a href="">Discover</a> </h3>
-            <h3> <a href="">Contact us</a> </h3>
+            <h3> <a href="contact.html">Contact us</a> </h3>
             `
     }
     else{
@@ -144,7 +143,7 @@ function hamburgerMenu(){
     return `
     <div class="off-screen-menu">
         <h3> <a href="">Discover</a> </h3>
-        <h3> <a href="">Contact us</a> </h3>
+        <h3> <a href="contact.html">Contact us</a> </h3>
     </div>
 
     <nav>
