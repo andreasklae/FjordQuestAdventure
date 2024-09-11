@@ -16,24 +16,21 @@ let header1 = "Something interesting"
 
 // the paragraph under
 let paragraph1 = `
-    something else djkfbkd that is interesting and engaging for the user.
-    Bla bla you should fill in something here
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-    optio, eaque rerum! Provident similique accusantium...
+    Discover breathtaking landscapes, majestic fjords, and thrilling adventures 
+    with Fjordquest Adventure. Whether you're seeking a peaceful escape or an adrenaline-filled 
+    journey, we have something for everyone. Embark on a personalized trip that connects you 
+    to the raw beauty of Sunmøre, where nature meets tradition in perfect harmony.
 `
 
 // second header 
-let header2 = "Something engaging"
+let header2 = "Your Adventure Awaits"
 
 // the paragraph under
 let paragraph2 = `
-    Something you want to tell about your business in a short introduction.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-    optio, eaque rerum! Provident similique accusantium...
+    Fjordquest Adventure specializes in creating unforgettable experiences tailored 
+    to your desires. Whether it's skiing down pristine slopes, hiking through towering mountains, 
+    or exploring the rugged coastline, we offer curated travel packages that will leave you with 
+    lifelong memories. Let us be your guide to the best Sunmøre has to offer.
 `
 
 // the boxes of featured trips:
@@ -50,18 +47,18 @@ class FeaturedBox{
 let boxes = [
     // here you can edit each box. Only edit what is in between the ""
     new FeaturedBox(
-        header = "ski trip",
-        description = "take a ski trip in the fjords",
+        header = "Ski Adventure",
+        description = "Ski through the breathtaking fjords with expert guides",
         backgroundImage = "bilder/featured/ski.jpg"
     ),
     new FeaturedBox(
-        header = "Hiking",
-        description = "Go on a hike in the mountains",
+        header = "Mountain Hiking",
+        description = "Experience unparalleled views on a mountain hike",
         backgroundImage = "bilder/featured/hiking.jpg"
     ),
     new FeaturedBox(
-        header = "Hotels",
-        description = "Sleep comfortably",
+        header = "Luxury Stay",
+        description = "Relax in comfort at our handpicked luxury hotels",
         backgroundImage = "bilder/featured/hotel.jpg"
     ),
     new FeaturedBox(
@@ -70,8 +67,8 @@ let boxes = [
         backgroundImage = "bilder/featured/camping.jpg"
     ),
     new FeaturedBox(
-        header = "Rent a car",
-        description = "Take a scenic roadtrip",
+        header = "Scenic Road Trips",
+        description = "Journey through Sunmøre’s scenic routes",
         backgroundImage = "bilder/featured/car.jpg"
     ),
     new FeaturedBox(
