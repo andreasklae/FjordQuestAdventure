@@ -96,150 +96,200 @@ let boxes = [
 ]
 
 // do not edit beyond this point
+let underConstruction = true
 
-// sets the first texts
-document.getElementById("header1").innerHTML = header1
-document.getElementById("paragraph1").innerHTML = paragraph1
-document.getElementById("header2").innerHTML = header2
-document.getElementById("paragraph2").innerHTML = paragraph2
-console.log(window.innerWidth)
+if (underConstruction){
+    document.getElementById("body").innerHTML = `
+        <img src="bilder/Norway_Lofoten_Mountains_Winter_Bay_Snow_566882_1600x1200.jpg" alt="" style = "
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 1; /* Place the image behind the text */
+        ">
 
-// Function to check if the device is a phone
-const onPhone = function() {
-    return window.innerWidth < 700;
-};
-
-function setNav(){
-    if(!onPhone()){
-        document.getElementById("topButtons").innerHTML = `
-            <h3> <a href="">Discover</a> </h3>
-            <h3> <a href="contact.html">Contact us</a> </h3>
-            `
-    }
-    else{
-        document.getElementById("topButtons").innerHTML = hamburgerMenu();
-        const hamMenu = document.querySelector(".ham-menu");
-
-        const offScreenMenu = document.querySelector(".off-screen-menu");
-
-        hamMenu.addEventListener("click", () => {
-        hamMenu.classList.toggle("active");
-        offScreenMenu.classList.toggle("active");
-        });
-    }
-}
-setNav();
-window.addEventListener('resize', setNav);
-
-
-function hamburgerMenu(){
-    return `
-    <div class="off-screen-menu">
-        <h3> <a href="">Discover</a> </h3>
-        <h3> <a href="contact.html">Contact us</a> </h3>
-    </div>
-
-    <nav>
-      <div class="ham-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
+        <div
+        style = "
+                margin-top: 10vh;
+                left: auto;
+                width: 70vw;
+                display: flex; flex-direction: column;
+                align-items: center; /* Center the contents horizontally */
+                overflow: hidden; /* Prevent scrolling inside the div */
+            "
+        > 
+            <img src="bilder/brand_images/package_watermark_89cusilu (1)/white/full/white_logo_transparent_background.png" alt="" 
+            style = "
+                left: auto;
+                width: 70vw;
+                z-index: 1; /* Place the image behind the text */
+            ">
+            <h2 style = "
+                color: white;
+                text-align: center;
+                z-index: 2;
+                margin-bottom: 20vh;
+            "
+            >
+                Website currently under construction
+            </h2>
+        </div>
+        
     `
 }
 
-function updateIntro(){
-    if(onPhone()){
-        document.getElementById("firstTexts").className = "about slideUp";
-    }
-    else{
-        document.getElementById("firstTexts").className = "intro slideUp";
-    }
-}
-updateIntro();
-window.addEventListener('resize', updateIntro);
 
+else{
 
-// Function to update the layout of the boxes
-const updateFeturedboxLayout = function() {
-    const featured = document.getElementById("featured");
-    featured.innerHTML = ''; // Clear existing content
-
-    // Iterate through the boxes
-    for (let i = 0; i < boxes.length; i++) {
-        let style = "ad";
-
-        if (onPhone()) {
-            style += " adFull slideLeft";
-        } else {
-            if ((i % 4 === 0) || (i % 4 === 3)) {
-                style += " adWide";
-            } else {
-                style += " adNarrow";
-            }
-
-            if (i % 2 === 0) {
-                style += " slideLeft";
-            } else {
-                style += " slideRight";
-            }
+    // sets the first texts
+    document.getElementById("header1").innerHTML = header1
+    document.getElementById("paragraph1").innerHTML = paragraph1
+    document.getElementById("header2").innerHTML = header2
+    document.getElementById("paragraph2").innerHTML = paragraph2
+    console.log(window.innerWidth)
+    
+    // Function to check if the device is a phone
+    const onPhone = function() {
+        return window.innerWidth < 700;
+    };
+    
+    function setNav(){
+        if(!onPhone()){
+            document.getElementById("topButtons").innerHTML = `
+                <h3> <a href="">Discover</a> </h3>
+                <h3> <a href="contact.html">Contact us</a> </h3>
+                `
         }
-
-        // Add the new box to the featured section
-        featured.innerHTML += `
-            <div class="${style}">
-                <a href="${boxes[i].link}">
-                    <img src="${boxes[i].backgroundImage}">
-                    <div class="text-content">
-                        <h2>${boxes[i].header}</h2>
-                        <p>${boxes[i].description}</p>
+        else{
+            document.getElementById("topButtons").innerHTML = hamburgerMenu();
+            const hamMenu = document.querySelector(".ham-menu");
+    
+            const offScreenMenu = document.querySelector(".off-screen-menu");
+    
+            hamMenu.addEventListener("click", () => {
+            hamMenu.classList.toggle("active");
+            offScreenMenu.classList.toggle("active");
+            });
+        }
+    }
+    setNav();
+    window.addEventListener('resize', setNav);
+    
+    
+    function hamburgerMenu(){
+        return `
+        <div class="off-screen-menu">
+            <h3> <a href="">Discover</a> </h3>
+            <h3> <a href="contact.html">Contact us</a> </h3>
+        </div>
+    
+        <nav>
+          <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+        `
+    }
+    
+    function updateIntro(){
+        if(onPhone()){
+            document.getElementById("firstTexts").className = "about slideUp";
+        }
+        else{
+            document.getElementById("firstTexts").className = "intro slideUp";
+        }
+    }
+    updateIntro();
+    window.addEventListener('resize', updateIntro);
+    
+    
+    // Function to update the layout of the boxes
+    const updateFeturedboxLayout = function() {
+        const featured = document.getElementById("featured");
+        featured.innerHTML = ''; // Clear existing content
+    
+        // Iterate through the boxes
+        for (let i = 0; i < boxes.length; i++) {
+            let style = "ad";
+    
+            if (onPhone()) {
+                style += " adFull slideLeft";
+            } else {
+                if ((i % 4 === 0) || (i % 4 === 3)) {
+                    style += " adWide";
+                } else {
+                    style += " adNarrow";
+                }
+    
+                if (i % 2 === 0) {
+                    style += " slideLeft";
+                } else {
+                    style += " slideRight";
+                }
+            }
+    
+            // Add the new box to the featured section
+            featured.innerHTML += `
+                <div class="${style}">
+                    <a href="${boxes[i].link}">
+                        <img src="${boxes[i].backgroundImage}">
+                        <div class="text-content">
+                            <h2>${boxes[i].header}</h2>
+                            <p>${boxes[i].description}</p>
+                        </div>
+                    </a>
+                </div>
+            `;
+        }
+    };
+    
+    // Initial call to apply the layout when the page loads
+    updateFeturedboxLayout();
+    
+    // Add an event listener to handle window resizing
+    window.addEventListener('resize', updateFeturedboxLayout);
+    
+    document.getElementById("aboutUs").innerHTML = aboutUs
+    document.getElementById("aboutSm").innerHTML = aboutSm
+    
+    setFooter();
+    window.addEventListener('resize', setFooter);
+    function footer(){
+        if(onPhone()){
+            return`
+                <p></p>
+                <h3>Reach us</h3>
+                <p id="Email">${email}</p>
+                <p id="Phone">${phone}</p>
+                <h1></h1>
+                <h3>Socials</h3>
+                <p>Instagram</p>
+                <p>Facebook</p>
+                `
+        }
+        else{
+            return`
+                <div style = "display: flex;">
+                    <div style = "display: block; margin-right: 40vw;">
+                        <h2>Reach us</h2>
+                        <p id="Email">${email}</p>
+                        <p id="Phone">${phone}</p>
                     </div>
-                </a>
-            </div>
-        `;
-    }
-};
-
-// Initial call to apply the layout when the page loads
-updateFeturedboxLayout();
-
-// Add an event listener to handle window resizing
-window.addEventListener('resize', updateFeturedboxLayout);
-
-document.getElementById("aboutUs").innerHTML = aboutUs
-document.getElementById("aboutSm").innerHTML = aboutSm
-
-function setFooter(){
-    if(onPhone()){
-        document.getElementById("footerContent").innerHTML = `
-            <p></p>
-            <h3>Reach us</h3>
-            <p id="Email">${email}</p>
-            <p id="Phone">${phone}</p>
-            <h1></h1>
-            <h3>Socials</h3>
-            <p>Instagram</p>
-            <p>Facebook</p>
-            `
-    }
-    else{
-        document.getElementById("footerContent").innerHTML = `
-            <div style = "display: flex;">
-                <div style = "display: block; margin-right: 40vw;">
-                    <h2>Reach us</h2>
-                    <p id="Email">${email}</p>
-                    <p id="Phone">${phone}</p>
+                    <div style = "display: block;">
+                        <h2>Socials</h2>
+                        <p>Instagram</p>
+                        <p>Facebook</p>
+                    </div>
                 </div>
-                <div style = "display: block;">
-                    <h2>Socials</h2>
-                    <p>Instagram</p>
-                    <p>Facebook</p>
-                </div>
-            </div>
-            `
+                `
+        }
+    }
+    function setFooter(){
+        document.getElementById("footerContent").innerHTML = footer()
     }
 }
-setFooter();
-window.addEventListener('resize', setFooter);
 
