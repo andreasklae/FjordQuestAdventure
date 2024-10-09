@@ -98,18 +98,13 @@ let boxes = [
 // do not edit beyond this point
 let underConstruction = true
 
-if (underConstruction){
-    document.getElementById("body").innerHTML = `
-        <img src="bilder/ålesund.jpeg" alt="" style = "
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: 1; /* Place the image behind the text */
-        ">
-
+if(underConstruction){
+    body = document.getElementById("body")
+    document.body.style.backgroundImage = "url('bilder/ålesund.jpeg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    //document.body.style.backgroundRepeat = "no-repeat";
+    body.innerHTML = `
         <div
         style = "
                 margin-top: 10vh;
