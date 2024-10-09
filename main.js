@@ -100,7 +100,7 @@ let underConstruction = true
 
 if (underConstruction){
     document.getElementById("body").innerHTML = `
-        <img src="bilder/Norway_Lofoten_Mountains_Winter_Bay_Snow_566882_1600x1200.jpg" alt="" style = "
+        <img src="bilder/ålesund.jpeg" alt="" style = "
             position: absolute;
             top: 0;
             left: 0;
@@ -124,17 +124,27 @@ if (underConstruction){
             style = "
                 left: auto;
                 width: 70vw;
+                max-width: 700px;
                 z-index: 1; /* Place the image behind the text */
             ">
             <h2 style = "
                 color: white;
                 text-align: center;
                 z-index: 2;
-                margin-bottom: 20vh;
+                margin-bottom: 0vh;
             "
             >
                 Website currently under construction
             </h2>
+            <h3 style = "
+                color: white;
+                text-align: center;
+                z-index: 2;
+                margin-bottom: 20vh;
+            "
+            >
+                For contact: Hello@FjordQuestAdventure.no
+            </h3>
         </div>
         
     `
