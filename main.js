@@ -12,25 +12,25 @@ file. use new lines to keep this file neat.
 // the first two info texts
 
 // first header 
-let header1 = "Something interesting"
+let header1 = "Discover Norway in Style"
 
 // the paragraph under
 let paragraph1 = `
-    Discover breathtaking landscapes, majestic fjords, and thrilling adventures 
-    with Fjordquest Adventure. Whether you're seeking a peaceful escape or an adrenaline-filled 
-    journey, we have something for everyone. Embark on a personalized trip that connects you 
-    to the raw beauty of Sunmøre, where nature meets tradition in perfect harmony.
+    Experience majestic fjords in an exclusive way.
+    FjordQuest Adventure offers tailor-made journeys through Norway’s most breathtaking landscapes.
+    Drive a Porsche Taycan 4S and indulge in luxurious experiences, from guided mountain hikes to local culinary delights.
+    This is more than just a trip – it’s a journey of discovery through Norway’s unique natural wonders.
 `
 
 // second header 
-let header2 = "Your Adventure Awaits"
+let header2 = "Tailored Luxury Experiences"
 
 // the paragraph under
 let paragraph2 = `
-    Fjordquest Adventure specializes in creating unforgettable experiences tailored 
-    to your desires. Whether it's skiing down pristine slopes, hiking through towering mountains, 
-    or exploring the rugged coastline, we offer curated travel packages that will leave you with 
-    lifelong memories. Let us be your guide to the best Sunmøre has to offer.
+    Your dream, our tailored adventure.
+    Every FjordQuest Adventure is crafted around your preferences, whether you're seeking thrilling expeditions or relaxing days in Norway’s most luxurious villas. 
+    Let us help you create unforgettable memories with bespoke packages that combine nature, culture, and luxury. 
+    We bring you closer to the beauty of nature – on your terms.
 `
 
 let aboutUs = `
@@ -40,12 +40,6 @@ let aboutUs = `
 let aboutSm = `
     Something about us that is interesting and fun for the user to read.
 `
-
-// your email
-let email = "support@fqa.no"
-
-// your phone nmbr
-let phone = "+47 123 45 678"
 
 // the boxes of featured trips:
 
@@ -62,41 +56,42 @@ class FeaturedBox{
 let boxes = [
     // here you can edit each box. Only edit what is in between the ""
     new FeaturedBox(
-        header = "Ski Adventure",
-        description = "Ski through the breathtaking fjords with expert guides",
-        backgroundImage = "bilder/featured/ski.jpg"
+        header = "The Porsche",
+        description = "Cruise through stunning fjords in a Porsche Taycan 4S for an unforgettable journey",
+        backgroundImage = "bilder/Boks/Porscheu1.jpeg"
     ),
     new FeaturedBox(
-        header = "Mountain Hiking",
-        description = "Experience unparalleled views on a mountain hike",
-        backgroundImage = "bilder/featured/hiking.jpg"
+        header = "Private Boat Tours",
+        description = "Cruise through Norway’s serene fjords and experience the tranquility of nature from the comfort of a private boat.",
+        backgroundImage = "bilder/boks/båtu1.jpg"
+
     ),
     new FeaturedBox(
-        header = "Luxury Stay",
-        description = "Relax in comfort at our handpicked luxury hotels",
-        backgroundImage = "bilder/featured/hotel.jpg"
+        header = "Hotels/Villa",
+        description = "Relax in comfort and style with stays at handpicked luxury hotels and villas offering stunning views and top-class amenities.",
+        backgroundImage = "bilder/boks/UnionGeirangeru1.jpg"
     ),
     new FeaturedBox(
-        header = "camping",
-        description = "Go camping in nature",
-        backgroundImage = "bilder/featured/camping.jpg",
-        link = "#"
+        header = "Helikopter",
+        description = "Soar above Norway’s majestic fjords and mountains for a breathtaking aerial adventure like no other.",
+        backgroundImage = "bilder/boks/fjordhelikopteru1.jpg"
     ),
     new FeaturedBox(
-        header = "Scenic Road Trips",
-        description = "Journey through Sunmøre’s scenic routes",
-        backgroundImage = "bilder/featured/car.jpg"
+        header = "Culinary Experience",
+        description = "Indulge in gourmet dining with local delicacies, crafted by expert chefs for an unforgettable culinary journey.",
+        backgroundImage = "bilder/boks/culinu1.webp"
     ),
     new FeaturedBox(
-        header = "Biking",
-        description = "Go biking in the terrain",
-        backgroundImage = "bilder/featured/biking.jpg",
-        link = "#"
+        header = "Hiking",
+        description = "Explore breathtaking mountain trails and experience Norway's raw natural beauty on foot.",
+        backgroundImage = "bilder/boks/Hikingu3.jpg"
+        
+ 
     )
 ]
 
 // do not edit beyond this point
-let underConstruction = true
+let underConstruction = false
 
 if(underConstruction){
     body = document.getElementById("body")
@@ -138,7 +133,7 @@ if(underConstruction){
                 margin-bottom: 20vh;
             "
             >
-                For contact: Hello@FjordQuestAdventure.no
+                Contact: Hello@FjordQuestAdventure.no
             </h3>
         </div>
         
@@ -163,7 +158,7 @@ else{
     function setNav(){
         if(!onPhone()){
             document.getElementById("topButtons").innerHTML = `
-                <h3> <a href="">Discover</a> </h3>
+                <h3> <a href="discover.html">Discover</a> </h3>
                 <h3> <a href="contact.html">Contact us</a> </h3>
                 `
         }
@@ -260,41 +255,5 @@ else{
     
     document.getElementById("aboutUs").innerHTML = aboutUs
     document.getElementById("aboutSm").innerHTML = aboutSm
-    
-    setFooter();
-    window.addEventListener('resize', setFooter);
-    function footer(){
-        if(onPhone()){
-            return`
-                <p></p>
-                <h3>Reach us</h3>
-                <p id="Email">${email}</p>
-                <p id="Phone">${phone}</p>
-                <h1></h1>
-                <h3>Socials</h3>
-                <p>Instagram</p>
-                <p>Facebook</p>
-                `
-        }
-        else{
-            return`
-                <div style = "display: flex;">
-                    <div style = "display: block; margin-right: 40vw;">
-                        <h2>Reach us</h2>
-                        <p id="Email">${email}</p>
-                        <p id="Phone">${phone}</p>
-                    </div>
-                    <div style = "display: block;">
-                        <h2>Socials</h2>
-                        <p>Instagram</p>
-                        <p>Facebook</p>
-                    </div>
-                </div>
-                `
-        }
-    }
-    function setFooter(){
-        document.getElementById("footerContent").innerHTML = footer()
-    }
 }
 

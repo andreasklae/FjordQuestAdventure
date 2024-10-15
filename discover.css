@@ -1,0 +1,25 @@
+/* Ensure seasonSelector uses flexbox */
+/* Basic styles for the buttons */
+#seasonSelector {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+    margin-bottom: 10px; /* Space for the underline */
+}
+
+#summerButton, #winterButton {
+    transition: color 0.5s;
+    cursor: pointer;
+    
+}
+
+#underline {
+    position: absolute;
+    bottom: 0; /* Position it at the bottom of the parent */
+    left: 0; /* Start under the first button */
+    height: 3px; /* Thickness of the line */
+    width: 50%; /* Width of the underline - 50% to match one button */
+    background-color: white; /* Color of the underline */
+    transition: left 0.5s ease, width 0.5s ease;  /* Add width to the transition */
+}

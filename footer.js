@@ -4,14 +4,14 @@ let email = "support@fqa.no"
 // your phone nmbr
 let phone = "+47 123 45 678"
 
-// Function to check if the device is a phone
-const onPhone = function() {
-    return window.innerWidth < 700;
-};
+let base = `<div class="logoContainer" style="display: flex;">
+            <img id="logoTop" style="margin-right: 20px;" src="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" alt="">
+            <h2>Fjord Quest Adventure</h2>
+        </div>`
 
-function setFooter(){
+function footer(){
     if(onPhone()){
-        document.getElementById("footerContent").innerHTML = `
+        return`
             <p></p>
             <h3>Reach us</h3>
             <p id="Email">${email}</p>
@@ -23,7 +23,7 @@ function setFooter(){
             `
     }
     else{
-        document.getElementById("footerContent").innerHTML = `
+        return`
             <div style = "display: flex;">
                 <div style = "display: block; margin-right: 40vw;">
                     <h2>Reach us</h2>
@@ -38,6 +38,17 @@ function setFooter(){
             </div>
             `
     }
+}
+function setFooter(){
+    document.getElementById("footer").innerHTML = 
+    base + 
+    `<div id="footerContent">` + 
+    footer()+
+    `</div>`
+}
+
+const onPhone = function() {
+    return window.innerWidth < 700;
 }
 setFooter();
 window.addEventListener('resize', setFooter);
