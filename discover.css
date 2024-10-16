@@ -110,3 +110,15 @@ body {
 .cardNarrow > p{
     font-size: 200%;
 }
+
+.roundButton{
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px; /* Adjust the radius to your liking */
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    align-items: center;
+    margin-bottom: 50px;
+    color: black;
+    font-size: 20pt;
+}

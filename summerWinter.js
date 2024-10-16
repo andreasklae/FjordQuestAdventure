@@ -5,6 +5,9 @@ let winterButton = document.getElementById("winterButton");
 let underline = document.getElementById("underline");
 
 summerButton.onclick = function() {
+    let delay = 0
+    if (!summer) delay = 400
+
     let w = document.getElementById("winterCards")
     let s = document.getElementById("summerCards")
     w.style.transform = "translateX(100%)"
@@ -15,13 +18,16 @@ summerButton.onclick = function() {
             behavior: 'smooth',  // Smooth scrolling effect
             inline: 'nearest'    // Keep horizontal position unchanged
         });
-    }, 400);
+    }, delay);
 
     summer = true;
     updateStyles();
 };
 
 winterButton.onclick = function() {
+    let delay = 0
+    if (summer) delay = 400
+    
     let w = document.getElementById("winterCards")
     let s = document.getElementById("summerCards")
     w.style.transform = "translateX(-100%)"
@@ -33,7 +39,7 @@ winterButton.onclick = function() {
             block: 'start',      // Scroll to the top of the view on the y-axis
             inline: 'nearest'    // Keep horizontal position unchanged
         });
-    }, 400);
+    }, delay);
 
     summer = false;
     updateStyles();
