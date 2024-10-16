@@ -91,7 +91,7 @@ let boxes = [
 ]
 
 // do not edit beyond this point
-let underConstruction = false
+let underConstruction = true
 
 if(underConstruction){
     body = document.getElementById("body")
