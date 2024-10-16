@@ -41,7 +41,7 @@ let summerCards = [
 let winterCards = [
     new Card(
         "Arrive at the hotel",
-        "Arrive at the hotel and complete the check-in process. Once settled in your room, take a moment to unwind after your journey. You can explore the hotel’s amenities or take a short walk around the nearby area to get acquainted with your surroundings.",
+        "Arrive at the hotel and do the check-in process. Once settled in your room, take a moment to unwind after your journey. You can explore the hotel’s amenities or take a short walk around the nearby area to get acquainted with your surroundings.",
         "bilder/Boks/UnionGeirangeru1.jpg",
         "#003152"
     ),
