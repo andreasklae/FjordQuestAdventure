@@ -10,7 +10,7 @@ summerButton.onclick = function() {
 
     let w = document.getElementById("winterCards")
     let s = document.getElementById("summerCards")
-    w.style.transform = "translateX(100%)"
+    w.style.transform = "translateX(120%)"
     s.style.transform = "translateX(0%)"
 
     setTimeout(function() {
@@ -31,7 +31,7 @@ winterButton.onclick = function() {
     let w = document.getElementById("winterCards")
     let s = document.getElementById("summerCards")
     w.style.transform = "translateX(-100%)"
-    s.style.transform = "translateX(-100%)"
+    s.style.transform = "translateX(-120%)"
     
     setTimeout(function() {
         document.getElementById("cards").scrollIntoView({

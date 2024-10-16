@@ -39,7 +39,7 @@ body {
 
 .cards{
     margin-top: 10px;
-    width: 100%;
+    width: 100vw;
     display: flex; /* Flexbox layout */
     justify-content: flex-start; /* Optional: space items evenly */
 }
