@@ -181,7 +181,7 @@ else{
     function hamburgerMenu(){
         return `
         <div class="off-screen-menu">
-            <h3> <a href="">Discover</a> </h3>
+            <h3> <a href="discover.html">Discover</a> </h3>
             <h3> <a href="contact.html">Contact us</a> </h3>
         </div>
     
