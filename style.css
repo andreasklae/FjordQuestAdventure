@@ -84,7 +84,7 @@ h3, h3 a{
     color: white;
 }
 
-p{
+p, a{
     font-family: var(--second-font);
     color: var(--text-color);
     line-height: 1.6;

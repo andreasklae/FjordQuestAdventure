@@ -1,0 +1,124 @@
+/* Ensure seasonSelector uses flexbox */
+/* Basic styles for the buttons */
+#seasonSelector {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+    margin-bottom: 10px; /* Space for the underline */
+}
+
+#summerButton, #winterButton {
+    transition: color 0.2s;
+    cursor: pointer;
+    transition: display 10s ease
+}
+
+body {
+    transition: background-color 0.5s ease; /* Change duration and easing as needed */
+}
+
+#underline {
+    position: absolute;
+    bottom: 0; /* Position it at the bottom of the parent */
+    left: 0; /* Start under the first button */
+    height: 3px; /* Thickness of the line */
+    width: 50%; /* Width of the underline - 50% to match one button */
+    background-color: white; /* Color of the underline */
+    transition: left 0.2s ease, width 0.2s ease;  /* Add width to the transition */
+}
+
+.cardWide > *{
+    margin: 20px;
+    position: relative;
+}
+
+.cards{
+    margin-top: 10px;
+    max-width: 100vw;
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Optional: space items evenly */
+    align-items: center;
+}
+
+.cardNarrow, .cardWide{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding: 20px;
+}
+.cardWide{
+    height: 90vh;
+    width: 100vw;
+    align-items: center;
+}
+.cardNarrow{
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+}
+
+#summerCards, #winterCards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all  0.5s ease;
+}
+
+#winterCards{
+    transform: translateX(100%);
+}
+.cardWide > img{
+    height: 80%;
+    width: auto; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px; /* Adjust the radius to your liking */
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5)
+}
+
+.cardNarrow > img{
+    height: auto;
+    width: 60vw; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px; /* Adjust the radius to your liking */
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5)
+}
+
+.cardWide > .text{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+}
+
+.cardWide > p{
+    font-size: 100%;
+}
+
+.cardNarrow > .text{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+}
+
+.cardNarrow > p{
+    font-size: 200%;
+}
+
+.roundButton{
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px; /* Adjust the radius to your liking */
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    align-items: center;
+    margin-bottom: 50px;
+    color: black;
+    font-size: 20pt;
+}
