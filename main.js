@@ -103,7 +103,7 @@ if(underConstruction){
         style = "
             position = absolute;
         "
-        id="backgroundPhoto" src="bilder/forside/alesund.jpeg" 
+        id="backgroundPhoto" src="bilder/Forside/alesund.jpeg" 
         alt=""
     >
         <div
