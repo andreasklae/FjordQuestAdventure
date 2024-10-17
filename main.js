@@ -95,16 +95,22 @@ let underConstruction = true
 
 if(underConstruction){
     body = document.getElementById("body")
-    document.body.style.backgroundImage = "url('bilder/forside/alesund.jpeg')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     //document.body.style.backgroundRepeat = "no-repeat";
     body.innerHTML = `
+    <img
+        style = "
+            position = absolute;
+        "
+        id="backgroundPhoto" src="bilder/forside/alesund.jpeg" 
+        alt=""
+    >
         <div
         style = "
                 margin-top: 10vh;
                 left: auto;
-                width: 70vw;
+                width: 90vw;
                 display: flex; flex-direction: column;
                 align-items: center; /* Center the contents horizontally */
                 overflow: hidden; /* Prevent scrolling inside the div */
@@ -130,10 +136,10 @@ if(underConstruction){
                 color: white;
                 text-align: center;
                 z-index: 2;
-                margin-bottom: 20vh;
             "
             >
-                Contact: Hello@FjordQuestAdventure.no
+                For contact: \n
+            Hello@FjordQuestAdventure.no
             </h3>
         </div>
         
