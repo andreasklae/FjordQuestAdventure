@@ -46,9 +46,5 @@ function setFooter(){
     footer()+
     `</div>`
 }
-
-const onPhone = function() {
-    return window.innerWidth < 700;
-}
 setFooter();
 window.addEventListener('resize', setFooter);

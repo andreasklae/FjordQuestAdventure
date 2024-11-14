@@ -1,8 +1,11 @@
 {
 	"folders": [
 		{
+			"name": "FjordQuestAdventure",
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "FjordQuestAdventure"
+	}
 }

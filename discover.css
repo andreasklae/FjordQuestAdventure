@@ -1,18 +1,3 @@
-/* Ensure seasonSelector uses flexbox */
-/* Basic styles for the buttons */
-#seasonSelector {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    gap: 20px;
-    margin-bottom: 10px; /* Space for the underline */
-}
-
-#summerButton, #winterButton {
-    transition: color 0.2s;
-    cursor: pointer;
-    transition: display 10s ease
-}
 html, body {
     margin: 0;
     padding: 0;
@@ -22,96 +7,146 @@ body {
     transition: background-color 0.5s ease; /* Change duration and easing as needed */
 }
 
-#underline {
-    position: absolute;
-    bottom: 0; /* Position it at the bottom of the parent */
-    left: 0; /* Start under the first button */
-    height: 3px; /* Thickness of the line */
-    width: 50%; /* Width of the underline - 50% to match one button */
-    background-color: white; /* Color of the underline */
-    transition: left 0.2s ease, width 0.2s ease;  /* Add width to the transition */
+.divider {
+    width: 90%;
+    height: 1px;
+    border-top: 1px solid white;
 }
 
-.cardWide > *{
-    margin: 20px;
+.toggleButton{
+    width: 89%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.toggleButton h1{
+    font-size: 2.3em;
+}
+.toggleTransition{
+    transition: transform 0.3s ease;
+}
+.arrowOpened{
+    transform: rotate(-90deg);
+}
+
+.arrowClosed{
+    transform: rotate(90deg);
+}
+
+
+.cardContainer{
+    display: none;
+    flex-direction: column;
+    width: 90vw;
+    transition: max-height 0.5s ease;
+    align-items: center;
+}
+
+.cardHorizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5%;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.cardVertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5%;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.cardHorizontal #text{
+    text-align: left;
+}
+
+.cardHorizontal img{
+    width: 35vw;
+    max-height: 350px;
+    height: 35vw;
+    max-width: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    align-self: center;
+}
+
+.cardVertical img{
+    width: 90vw;
+    object-fit: cover;
+    border-radius: 15px;
+    align-self: center;
+}
+
+#destNavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 20px;
+    min-width: 90vw;
+    padding: 0;
     position: relative;
 }
 
-.cards{
-    margin-top: 10px;
-    width: 100vw;
-    display: flex; /* Flexbox layout */
-    justify-content: flex-start; /* Optional: space items evenly */
+.navItem{
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background-color 0.3s ease;
 }
 
-.cardNarrow, .cardWide{
+#navContainer {
+    position: relative;
+    min-width: 90vw;
+}
+
+#selectedBoxContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+#destNavBar {
+    position: relative;
+    z-index: 1; /* Brings it above selectedBoxContainer */
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
-    padding: 20px;
-}
-.cardWide{
-    height: 90vh;
-    width: 100%;
-    align-items: center;
-}
-.cardNarrow{
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    align-items: center;
+    width: 70vw;
 }
 
-#summerCards, #winterCards{
+#destNavBar p{
+    font-size: 1.5em;
+}
+
+#selectedBoxContainer{
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    transition: all  0.5s ease;
+    flex-direction: row;
+    left:2px
 }
 
-#winterCards{
-    transform: translateX(100%);
-}
-.cardWide > img{
-    height: 80%;
-    width: auto; /* Maintain aspect ratio */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 20px; /* Adjust the radius to your liking */
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5)
+.selectedItem{
+    transition: width 0.3s ease;
 }
 
-.cardNarrow > img{
-    height: auto;
-    width: 80vw; /* Maintain aspect ratio */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 20px; /* Adjust the radius to your liking */
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5)
+#selected{
+    background-color: black;
+    border-radius: 18px;
 }
 
-.cardWide > .text{
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    text-align: left;
-    width: 50%;
+.shadowBottomLeft{
+    box-shadow: -8px 8px 16px rgba(0, 0, 0, 0.4);
 }
-
-.cardWide > p{
-    font-size: 100%;
+.shadowBottomRight{
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4);
 }
-
-.cardNarrow > .text{
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    text-align: center;
-    width: 90%;
-}
-
-.cardNarrow > p{
-    font-size: 200%;
+.shadowBottomCenter{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .roundButton{

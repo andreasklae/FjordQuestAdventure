@@ -91,7 +91,7 @@ let boxes = [
 ]
 
 // do not edit beyond this point
-let underConstruction = true
+let underConstruction = false
 
 if(underConstruction){
     body = document.getElementById("body")
@@ -155,11 +155,6 @@ else{
     document.getElementById("header2").innerHTML = header2
     document.getElementById("paragraph2").innerHTML = paragraph2
     console.log(window.innerWidth)
-    
-    // Function to check if the device is a phone
-    const onPhone = function() {
-        return window.innerWidth < 700;
-    };
     
     function setNav(){
         if(!onPhone()){
