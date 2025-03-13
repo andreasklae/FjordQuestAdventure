@@ -1,15 +1,11 @@
-function column(content, className = "") {
-    return `
-        <div class="column-container ${className}" style="display: flex; flex-direction: column; gap: 0px;">
-            ${content}
-        </div>
-    `;
-}
+function spacer(height) {
+    let spaceDiv = document.createElement("div");
+    spaceDiv.style.height = `${height}px`;
+    spaceDiv.style.width = "100%";
 
-function row(content, className = "") {
-    return `
-        <div class="row-container ${className}" style="display: flex; flex-direction: row; gap: 10px;">
-            ${content}
-        </div>
-    `;
+    // Find the script tag that called this function
+    let scriptTag = document.currentScript;
+
+    // Insert the spacer div right before the script tag
+    scriptTag.parentNode.insertBefore(spaceDiv, scriptTag);
 }

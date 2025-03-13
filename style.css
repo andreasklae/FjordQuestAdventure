@@ -11,6 +11,9 @@
     --second-font: "Bebas Neue", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 .textLeft{
     text-align: left;
@@ -69,13 +72,16 @@
 
 h1{
     font-size: 3em;
+    margin: 20px;
 }
 p{
-    font-size: 1.2m;
+    font-size: 1.2em;
+    margin: 5px;
 }
 h1, h2{
     font-family: var(--head-font);
-    color: white;  
+    color: white; 
+    margin: 10px; 
 }
 h3, h3 a{
     font-family: var(--head-font);
