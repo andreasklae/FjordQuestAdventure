@@ -85,6 +85,6 @@ function getAccommodations(){
 
 function generateOutro(name, link){
     return `
-        <h1>To read more about ${name} click <a href="${link}">here</a></h1>
+        <h2 class = "glassBox">To read more about ${name} click <a href="${link}">here</a></h2>
     `
 }

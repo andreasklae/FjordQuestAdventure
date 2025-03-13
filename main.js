@@ -34,11 +34,18 @@ let paragraph2 = `
 `
 
 let aboutUs = `
-    Something about us that is interesting and fun for the user to read.
+At Fjord Quest Adventure, we specialize in creating bespoke travel experiences tailored to your unique desires. 
+Based in Norway, we combine our deep expertise in luxury travel with a passion for crafting journeys that go beyond 
+the ordinary. Whether you dream of serene escapes, cultural immersions, or exhilarating adventures, our team meticulously designs 
+every detail to ensure an unforgettable experience. With access to exclusive destinations, personalized itineraries, and exceptional service, 
+we turn your travel aspirations into reality. At Fjord Quest Adventure, your journey is as extraordinary as the memories you’ll make.
 `
 
-let aboutSm = `
-    Something about us that is interesting and fun for the user to read.
+let mission = `
+Our mission at Fjord Quest Adventure is to redefine luxury travel by creating personalized journeys that inspire, delight, and leave lasting impressions.
+ We are dedicated to curating unique experiences that reflect our clients’ individuality, ensuring every adventure is seamless, stress-free, and 
+ extraordinary. With a commitment to excellence, sustainability, and meaningful connections, we aim to transform travel into an art form, where every 
+ detail is designed to exceed expectations and celebrate the beauty of exploration.
 `
 
 // the boxes of featured trips:
@@ -159,8 +166,9 @@ else{
     function setNav(){
         if(!onPhone()){
             document.getElementById("topButtons").innerHTML = `
-                <h3> <a href="discover.html">Discover</a> </h3>
+                <h3> <a href="discover.html">What we offer</a> </h3>
                 <h3> <a href="contact.html">Contact us</a> </h3>
+                <h3> <a href="contact.html">Accomodation</a> </h3>
                 `
         }
         else{
@@ -182,8 +190,9 @@ else{
     function hamburgerMenu(){
         return `
         <div class="off-screen-menu">
-            <h3> <a href="discover.html">Discover</a> </h3>
+            <h3> <a href="discover.html">What we offer</a> </h3>
             <h3> <a href="contact.html">Contact us</a> </h3>
+            <h3> <a href="contact.html">Accomodation</a> </h3>
         </div>
     
         <nav>
@@ -255,6 +264,6 @@ else{
     window.addEventListener('resize', updateFeturedboxLayout);
     
     document.getElementById("aboutUs").innerHTML = aboutUs
-    document.getElementById("aboutSm").innerHTML = aboutSm
+    document.getElementById("mission").innerHTML = mission
 }
 

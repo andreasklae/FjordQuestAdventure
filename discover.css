@@ -1,36 +1,29 @@
-html, body {
+/* Reset everything */
+* {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-body {
-    transition: background-color 0.5s ease; /* Change duration and easing as needed */
+    box-sizing: border-box;
 }
 
-.divider {
-    width: 90%;
-    height: 1px;
-    border-top: 1px solid white;
+/* Ensure body fills screen */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents scrolling */
+    position: relative;
 }
 
-.toggleButton{
-    width: 89%;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-.toggleButton h1{
-    font-size: 2.3em;
-}
-.toggleTransition{
-    transition: transform 0.3s ease;
-}
-.arrowOpened{
-    transform: rotate(-90deg);
-}
-
-.arrowClosed{
-    transform: rotate(90deg);
+/* Style the background image */
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110vw; /* Slightly larger than viewport */
+    height: 110vh; /* Slightly larger than viewport */
+    object-fit: cover;
+    filter: blur(15px) brightness(0.4);
+    transform: scale(1.1); /* Scale up to cover blurred edges */
+    z-index: -1; /* Keep it behind all content */
 }
 
 
@@ -40,16 +33,22 @@ body {
     width: 90vw;
     transition: max-height 0.5s ease;
     align-items: center;
+    max-width: 1100px;
+}
+
+#accommodationContent{
+    width: 90vw;
+    max-width: 1100px;
 }
 
 .cardHorizontal{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     gap: 5%;
     margin-bottom: 25px;
     margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
+    max-width: 1100px;
 }
 
 .cardVertical{
@@ -59,6 +58,7 @@ body {
     gap: 5%;
     margin-bottom: 50px;
     align-items: center;
+    max-width: 1100px;
 }
 
 .cardHorizontal #text{
@@ -73,13 +73,16 @@ body {
     object-fit: cover;
     border-radius: 15px;
     align-self: center;
+    max-width: 1100px;
 }
 
 .cardVertical img{
-    width: 90vw;
+    width: 100%;
+    max-height: 70vh;
     object-fit: cover;
     border-radius: 15px;
     align-self: center;
+    max-width: 1100px;
 }
 
 #destNavBar{
@@ -88,9 +91,10 @@ body {
     justify-content: space-around;
     border: 2px solid white;
     border-radius: 20px;
-    min-width: 90vw;
+    width: 90vw;
     padding: 0;
     position: relative;
+    max-width: 1100px;
 }
 
 .navItem{
@@ -101,7 +105,15 @@ body {
 
 #navContainer {
     position: relative;
-    min-width: 90vw;
+    width: 90vw;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    
+    background-color: #00000066;
+    backdrop-filter: blur(16px);
+    margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 #selectedBoxContainer {
@@ -117,7 +129,8 @@ body {
     position: relative;
     z-index: 1; /* Brings it above selectedBoxContainer */
     display: flex;
-    width: 70vw;
+    width: 90vw;
+    max-width: 1100px;
 }
 
 #destNavBar p{
@@ -151,7 +164,8 @@ body {
 
 .roundButton{
     padding: 10px;
-    background-color: white;
+    background-color: #ffffff;
+    margin-top: 20px;
     border-radius: 20px; /* Adjust the radius to your liking */
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
     text-decoration: none;

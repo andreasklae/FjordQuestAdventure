@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fjord Quest Adventure</title>
     <link rel="icon" href="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" type="image/png">
-    <link rel="stylesheet" href="discover.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="discover.css"> 
     
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,72 +20,25 @@
     
     <script src="card.js"></script>
     <script src="onPhone.js"></script>
+    <script src="elements.js"></script>
+
 </head>
 <body>
+    <img src="bilder/Forside/alesund.jpeg" class="background-blur" alt="Background Image">
     <a href="index.html" class="top" style="text-decoration: none;">
         <div class="logoContainer">
             <img id="logoTop" src="bilder/brand_images/package_highres_89cusilu (1)/black/icon/white_icon_transparent_background.png" alt="">
             <h2 style="text-align: left;">Fjord Quest Adventure</h2>
         </div>
     </a>
-    <h1>Discover</h1>
-    <h3 style="max-width: 90%;">
-        Explore the unique experiences and hidden gems that await you. From breathtaking landscapes to rich cultural heritage, discover the wonders that make this journey unforgettable. Let each destination tell its story, and find the adventure that resonates with you. 
-    </h3>
 
-    <h1></h1>
-
-    <div class="divider"></div>
-    <div 
-        id="destinationToggle" 
-        class="toggleButton"
-        onclick="toggle('destinationContainer', 'destinationArrow')"
-    >
-        <h1>Destinations</h1>
-        
-        <div id="destinationArrow" class="arrowClosed toggleTransition">
-            <h1>›</h1>
-        </div>
-    </div>
-    
-    <div id="destinationContainer" class="cardContainer"></div>
-    <script src="destinationCards.js"></script>
-
-    <div class="divider"></div>
-
-    <div 
-        id="accommodationToggle" 
-        class="toggleButton"
-        onclick="toggle('accommodationContainer', 'accommodationArrow')"
-    >
-        <h1>Accommodation</h1>
-        
-        <div id="accommodationArrow" class="arrowClosed toggleTransition">
-            <h1>›</h1>
-        </div>
-    </div>
-
-    <div id="accommodationContainer" class="cardContainer">
-        <div id="navContainer">
-            <div id="destNavBar">
-                    
-            </div>
-            <div id="selectedBoxContainer">
-                <div class="selectedItem" id="navLeftBound"></div>
-                <div class="selectedItem" id="selected"></div>
-                <div class="selectedItem" id="navRightBound"></div>
-            </div>
-        </div>
-        <div id="accommodationContent"></div>
-    </div>
-    <script src="accommodationCards.js"></script>
-    <script src="destNavBar.js"></script>
-    
+    <h1 class="textCenter">What we offer</h1>
+    <p class="textCenter">We offer a ....</p>
+    <h1>Destinations</h1>
+    <h1>Daytrips</h1>
+    <h1>Quests</h1>
 
 
-    <a class="roundButton" href="contact.html">Contact us ❭</a>
-    
-    <script src="discoverToggle.js"></script>
     <footer id="footer"></footer>
     <script src="footer.js"></script>
     

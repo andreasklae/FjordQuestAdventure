@@ -17,13 +17,17 @@ function generateHorizontalCards(cards){
         
 
         container = container + `
+        <div class="glassBox">
             <div class="cardHorizontal">
                 <img style="order: ${order[1]};" src="${cards[i].img}" class="${shadow}"alt="photo of ${cards[i].header}">
                 <div style="order: ${order[0]};" id="text">
                     <h1>${cards[i].header}</h1>
                     <h3> ${cards[i].paragraph}</h3>
-                </div>
             </div>
+                <h3> ${cards[i].paragraph}</h3>
+            </div>
+        </div>
+            
         `
     }
     return container
@@ -33,7 +37,7 @@ function generateVerticalCards(cards){
     container = ""
     for (let i = 0; i < cards.length; i++) {
         container = container + `
-            <div class="cardVertical">
+            <div class="cardVertical glassBox">
                 <h1>${cards[i].header}</h1> 
                 <img src="${cards[i].img}" class="shadowBottomCenter" alt="photo of ${cards[i].header}">
                 <h3> ${cards[i].paragraph}</h3>
