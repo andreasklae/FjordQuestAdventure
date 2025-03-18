@@ -39,15 +39,15 @@
         <div class="navigation-row">
             <a href="#Destinations" class="image-tile">
                 <img src="bilder/thief/Bed-breakfast-THE-THIEF.jpg" alt="Destinations">
-                <div class="overlay"><h3>Destinations</h3></div>
+                <div class="overlay"><h2>Destinations</h2></div>
             </a>
             <a href="#Daytrips" class="image-tile">
                 <img src="bilder/LokalPorscheu1.jpg" alt="Daytrips">
-                <div class="overlay"><h3>Daytrips</h3></div>
+                <div class="overlay"><h2>Daytrips</h2></div>
             </a>
             <a href="#Quests" class="image-tile">
                 <img src="bilder/featured/ski.jpg" alt="Quests">
-                <div class="overlay"><h3>Quests</h3></div>
+                <div class="overlay"><h2>Quests</h2></div>
             </a>
         </div>
 
@@ -63,7 +63,7 @@
             <div class="row">
                 <img src="bilder/thief/Sea-view-THE-THIEF.png" alt="View of Oslo" class="row-image">
                 <div class="textLeft">
-                    <h1>Oslo</h1>
+                    <h2>Oslo</h2>
                     <p>Oslo, Norway’s vibrant capital, blends modern city life with rich history and stunning nature. Explore world-class museums, the scenic Oslofjord, and a thriving culinary scene. Whether you seek cultural experiences or outdoor adventures, Oslo offers something for everyone.</p>
                     <a href="accommodation.html" class="nav-button">View Accommodations</a>
                 </div>
@@ -73,7 +73,7 @@
             <div class="row slideUp">
                 <img src="bilder/destinations/trondheim.jpeg" alt="View of Trondheim" class="row-image">
                 <div class="textLeft">
-                    <h1>Trondheim</h1>
+                    <h2>Trondheim</h2>
                     <p>Trondheim, a city rich in Viking heritage, is home to the stunning Nidaros Cathedral and colorful wharves lining the river. Experience a perfect mix of history, student life, and scenic landscapes, making it an unforgettable stop on your journey through Norway.</p>
                     <a href="accommodation.html" class="nav-button">View Accommodations</a>
                 </div>
@@ -83,7 +83,7 @@
             <div class="row slideUp">
                 <img src="bilder/destinations/alesund.jpeg" alt="View of Ålesund" class="row-image">
                 <div class="textLeft">
-                    <h1>Ålesund</h1>
+                    <h2>Ålesund</h2>
                     <p>Ålesund’s breathtaking Art Nouveau architecture and coastal beauty make it one of Norway’s most picturesque cities. Climb up Aksla viewpoint for stunning panoramic views, explore the charming harbor, and discover Norway’s maritime heritage in this unique seaside destination.</p>
                     <a href="accommodation.html" class="nav-button">View Accommodations</a>
                 </div>
@@ -93,19 +93,38 @@
             <div class="row slideUp">
                 <img src="bilder/destinations/geiranger.jpg" alt="View of Geiranger" class="row-image">
                 <div class="textLeft">
-                    <h1>Geiranger</h1>
+                    <h2>Geiranger</h2>
                     <p>Geiranger is a fairytale fjord destination, famous for its dramatic waterfalls, steep cliffs, and deep blue waters. A UNESCO World Heritage Site, this breathtaking location offers scenic boat tours, hiking trails, and unparalleled natural beauty in the heart of Norway.</p>
                     <a href="accommodation.html" class="nav-button">View Accommodations</a>
                 </div>
             </div>
         </div>
 
-        <h1>Daytrips</h1>
+        <div id="Daytrips" class="textCenter">
+            <h1>Daytrips</h1>
+            <p>
+                Experience Norway’s breathtaking landscapes with our exclusive daytrip packages. Whether you seek a sustainable adventure, a balance of comfort and performance, or the ultimate luxury experience, FjordQuest has the perfect journey for you. Choose from our Eco, Medium, or High-tier packages and explore the fjords in style.
+            </p>
+            
+            <script src="dayTrip.js"></script>
+            <script>
+                menu("Sykkylven", "Geiranger", "Atlanterhavsveien");
+            
+                // Add event listener to listen for menu selection changes
+                document.addEventListener("menuItemSelected", (event) => {
+                    changeTrip(event.detail.selectedItem, "trip");
+                });
+            </script>
+            <div id="trip">
+
+            </div>
+        </div>
+
+
+
         <h1>Quests</h1>
         
     </div>
-
-
     <footer id="footer"></footer>
     <script src="footer.js"></script>
     

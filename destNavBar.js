@@ -11,7 +11,6 @@ let dests = [
     new Destination("Geiranger"),
 ]
 
-let accommodationMap = getAccommodations() // a map
 
 let selected = dests[0]
 

@@ -46,7 +46,6 @@ html, body {
     gap: 20px; /* Space between image and text */
     max-width: 1100px;
     margin: 20px auto; /* Center the row */
-    padding: 20px;
     overflow: hidden; /* Prevents child elements from overflowing */
 }
 
@@ -59,7 +58,6 @@ html, body {
     object-fit: cover; /* Ensures images fill the space without distortion */
     aspect-ratio: 4 / 3; /* Forces all images to have the same proportions */
 }
-
 
 .navigation-row {
     display: flex;
@@ -104,7 +102,6 @@ html, body {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.5rem;
     transition: 0.3s;
 }
 .nav-button {
@@ -113,7 +110,6 @@ html, body {
     padding: 10px 20px;
     border: 2px solid White; /* Creates the rectangular border */
     background-color: transparent;
-    font-size: 1.2em;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -129,6 +125,8 @@ html, body {
 .image-tile:hover .overlay {
     background: rgba(0, 0, 0, 0.3);
 }
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .row {

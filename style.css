@@ -7,7 +7,7 @@
     --accent-color: #c86a28;
 
     --head-font: "Playfair Display", serif;
-    --head-spacing: 0.15em;
+    --head-spacing: 0.15rem;
     --second-font: "Bebas Neue", sans-serif;
 }
 
@@ -71,17 +71,18 @@ html {
 
 
 h1{
-    font-size: 3em;
-    margin: 20px;
+    font-size: 3.3rem;
+}
+
+h2{
+    font-size: 2.3rem;
 }
 p{
-    font-size: 1.2em;
-    margin: 5px;
+    font-size: 1.2rem;
 }
 h1, h2{
     font-family: var(--head-font);
     color: white; 
-    margin: 10px; 
 }
 h3, h3 a{
     font-family: var(--head-font);
