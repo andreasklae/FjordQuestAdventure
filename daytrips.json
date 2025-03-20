@@ -1,0 +1,243 @@
+{
+    "trips": [
+      {
+        "trip_name": "Sykkylven",
+        "itinerary": [
+          {
+            "destination": "Pick-Up Hotel",
+            "start_time": "15:00",
+            "end_time": "15:25", 
+            "description": "Pick up from hotel in Ålesund",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Ferry",
+            "start_time": "15:30",
+            "end_time": "15:45",
+            "description": "Ferry crossing to Sykkylven",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Strandafjellet",
+            "start_time": "15:45",
+            "end_time": "16:15",
+            "description": "Gondola up to the top (coffee/photo)",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Departure to Rorbu",
+            "start_time": "18:00",
+            "end_time": "18:25",
+            "description": "Transport to Rorbu restaurant",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Rorbu",
+            "start_time": "18:30",
+            "end_time": "19:30",
+            "description": "Shellfish experience",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Grova",
+            "start_time": "19:35",
+            "end_time": "21:00",
+            "description": "Tour and tasting with history",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Departure to Ferry",
+            "start_time": "21:00",
+            "end_time": "21:15",
+            "description": "Transport to ferry terminal",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Ferry",
+            "start_time": "21:30",
+            "end_time": "21:45",
+            "description": "Ferry crossing back to Ålesund with ice cream treat",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Load-Off Hotel",
+            "start_time": "21:45",
+            "end_time": "22:10",
+            "description": "Drop off at hotel in Ålesund",
+            "image": "placeholder.jpg"
+          }
+        ]
+      },
+      {
+        "trip_name": "Geiranger",
+        "itinerary": [
+          {
+            "destination": "Pick-Up Hotel",
+            "start_time": "09:45",
+            "end_time": "11:00",
+            "description": "Pick up from hotel in Ålesund, transport to Linge Ferry terminal",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Ferry",
+            "start_time": "11:15",
+            "end_time": "11:30",
+            "description": "Ferry crossing to Eidsdal",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "To Geiranger",
+            "start_time": "11:30",
+            "end_time": "12:00",
+            "description": "Scenic drive from Eidsdal to Geiranger",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Lunch Union Geiranger",
+            "start_time": "12:05",
+            "end_time": "13:35",
+            "description": "Lunch at Union Geiranger (not included)",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "RIB boat",
+            "start_time": "14:00",
+            "end_time": "14:45",
+            "description": "RIB boat safari around Geirangerfjord",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Dalsnibba",
+            "start_time": "15:00",
+            "end_time": "15:35",
+            "description": "Trip to Dalsnibba viewpoint",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Return from Dalsnibba",
+            "start_time": "16:00",
+            "end_time": "16:35",
+            "description": "Return drive to Geiranger",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Dinner Brasserie Posten",
+            "start_time": "16:40",
+            "end_time": "18:15",
+            "description": "Dinner at Brasserie Posten",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Departure to Ferry",
+            "start_time": "18:20",
+            "end_time": "18:50",
+            "description": "Drive to Eidsdal Ferry terminal",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Ferry",
+            "start_time": "19:00",
+            "end_time": "19:15",
+            "description": "Ferry crossing to Linge",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Load-Off Hotel",
+            "start_time": "19:15",
+            "end_time": "20:30",
+            "description": "Return drive to hotel in Ålesund",
+            "image": "placeholder.jpg"
+          }
+        ]
+      },
+      {
+        "trip_name": "Atlanterhavsveien",
+        "itinerary": [
+          {
+            "destination": "Pick-Up Hotel",
+            "start_time": "09:30",
+            "end_time": "10:40",
+            "description": "Pick up from hotel in Ålesund, transport to Vestnes Ferry terminal",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Ferry from Vestnes to Molde",
+            "start_time": "10:50",
+            "end_time": "11:25",
+            "description": "Ferry crossing to Molde",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Transport to Eldhusøya",
+            "start_time": "11:25",
+            "end_time": "12:20",
+            "description": "Drive from Molde to Eldhusøya on Atlantic Ocean Road",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Private Sightseeing",
+            "start_time": "12:30",
+            "end_time": "13:00",
+            "description": "Walking tour on the scenic path",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Drive Atlantic Ocean Road",
+            "start_time": "13:00",
+            "end_time": "13:30",
+            "description": "Drive the entire Atlantic Ocean Road",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Lunch at Hustadvika Hotel",
+            "start_time": "13:30",
+            "end_time": "14:50",
+            "description": "Lunch at Hustadvika Hotel",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Drive to Budcamping",
+            "start_time": "15:00",
+            "end_time": "15:22",
+            "description": "Transport to boat dock at Budcamping",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Boat trip",
+            "start_time": "15:30",
+            "end_time": "17:30",
+            "description": "Boat trip with possible visit to seal island",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Drive to Molde",
+            "start_time": "17:40",
+            "end_time": "18:30",
+            "description": "Return drive to Molde",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Dinner at Restaurant Kel",
+            "start_time": "18:30",
+            "end_time": "20:00",
+            "description": "Dinner at Restaurant Kel in Molde",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Ferry to Vestnes from Molde",
+            "start_time": "20:15",
+            "end_time": "20:48",
+            "description": "Ferry crossing back to Vestnes",
+            "image": "placeholder.jpg"
+          },
+          {
+            "destination": "Load-Off Hotel",
+            "start_time": "20:48",
+            "end_time": "22:00",
+            "description": "Return drive to hotel in Ålesund",
+            "image": "placeholder.jpg"
+          }
+        ]
+      }
+    ]
+  }

@@ -196,13 +196,13 @@ function selectMenuItem(index, items) {
         document.querySelector(".menu-dropdown").style.display = "block";
 
         // Update dropdown button text with selected item
-        dropdownButton.innerHTML = `${items[index]} <span>⌃</span>`;
+        dropdownButton.innerHTML = `${items[index]} <span>+</span>`;
 
         // Regenerate the dropdown menu (excluding selected item)
         dropdownMenu.innerHTML = "";
         items.forEach((item, i) => {
             if (i !== index) {
-                const dropdownItem = document.createElement("h2");
+                const dropdownItem = document.createElement("div");
                 dropdownItem.textContent = item;
                 dropdownItem.onclick = () => selectMenuItem(i, items);
                 dropdownMenu.appendChild(dropdownItem);

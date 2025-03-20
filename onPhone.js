@@ -1,3 +1,3 @@
 const onPhone = function() {
-    return window.innerWidth < 900;
+    return window.innerWidth < 768;
 };
