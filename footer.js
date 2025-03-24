@@ -20,6 +20,7 @@ function footer(){
             <h3>Socials</h3>
             <p>Instagram</p>
             <p>Facebook</p>
+            <p style="color: gray;">Website created by Andreas Klæboe</p>
             `
     }
     else{
@@ -36,15 +37,15 @@ function footer(){
                     <p>Facebook</p>
                 </div>
             </div>
+            <p style="color: gray;">Website created by Andreas Klæboe</p>
+
             `
     }
 }
 function setFooter(){
     document.getElementById("footer").innerHTML = 
     base + 
-    `<div id="footerContent">` + 
-    footer()+
-    `</div>`
+    footer()
 }
 setFooter();
 window.addEventListener('resize', setFooter);

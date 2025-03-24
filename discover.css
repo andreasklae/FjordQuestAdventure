@@ -1,10 +1,3 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Full-page layout fix */
 html, body {
     height: 100%;
@@ -105,6 +98,7 @@ html, body {
     transition: 0.3s;
 }
 .nav-button {
+    cursor: pointer;
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -114,6 +108,17 @@ html, body {
     font-weight: bold;
     transition: all 0.3s ease;
     border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+#arrowIcon {
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+#toggleText{
+    margin-right: 10px;
 }
 
 .nav-button:hover {

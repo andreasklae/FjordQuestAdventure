@@ -11,7 +11,7 @@ function spacer(height) {
 }
 
 function menu(...items) {
-    // Insert CSS dynamically
+    // Insert CSS
     const style = document.createElement("style");
     style.textContent = `
         .menu-container {
@@ -19,18 +19,16 @@ function menu(...items) {
             margin: 20px auto;
         }
 
-        /* Navbar */
         .menu-navbar {
             display: flex;
             position: relative;
             justify-content: space-between;
             border: 2px solid white;
             border-radius: 20px;
-            padding: 0;
             overflow: hidden;
+            margin: 40px;
         }
 
-        /* Highlight */
         .menu-highlight {
             position: absolute;
             top: 0;
@@ -42,10 +40,10 @@ function menu(...items) {
             z-index: 1;
         }
 
-        /* Menu Items */
         .menu-item {
+            margin: 0;
             flex: 1;
-            padding: 30px 30px;
+            padding: 32px 30px;
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -53,182 +51,195 @@ function menu(...items) {
             position: relative;
             z-index: 2;
             transition: color 0.3s ease-in-out;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
 
-        /* Dropdown (Hidden by Default) */
         .menu-dropdown {
             display: none;
-            position: relative; /* Stay inside parent */
             width: fit-content;
-            border-radius: 10px;
-            margin-right: 100vw;
-            overflow: hidden;
-            padding: 0; /* Ensure no extra padding */
+            margin-right: auto;
         }
 
-        /* Dropdown Button (Always Visible) */
-        .menu-dropdown-button {
-            padding: 1px 20px;
+        .menu-mobile-wrapper {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .menu-dropdown-top {
             background-color: white;
             color: black;
             font-weight: bold;
+            padding: 12px 20px;
+            font-size: 1.5rem;
             cursor: pointer;
-            text-align: left;
-            border: none;
-            outline: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
-        /* Dropdown Arrow */
-        .menu-dropdown-button span {
-            display: inline-block;
-            transition: transform 0.3s ease-in-out;
-            font-size: 2em;
-            transform: rotate(0deg);
-            margin-left: 10px;
+        .menu-dropdown-top span {
+            font-size: 2rem;
+            transition: transform 0.3s ease;
         }
 
-        /* Rotate Arrow When Active */
-        .menu-dropdown.open .menu-dropdown-button span {
+        .menu-dropdown.open .menu-dropdown-top span {
             transform: rotate(-45deg);
         }
 
-        /* Dropdown Menu */
-        .menu-dropdown-menu {
+        .menu-dropdown-items {
             max-height: 0;
-            opacity: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            background: rgba(255, 255, 255, 0.1);
-            text-align: left;
+            opacity: 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
         }
 
-        /* Show Dropdown Menu */
-        .menu-dropdown.open .menu-dropdown-menu {
-            max-height: 300px;
+        .menu-dropdown.open .menu-dropdown-items {
+            max-height: 500px;
             opacity: 1;
         }
 
-        /* Dropdown Items */
-        .menu-dropdown-menu div {
-            padding: 20px;
+        .menu-dropdown-item {
+            padding: 12px 20px;
             font-weight: bold;
             color: white;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
-        /* Hover Effect */
-        .menu-dropdown-menu div:hover {
+        .menu-dropdown-item:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-
-        
     `;
     document.head.appendChild(style);
 
-    // Create the menu container
+    // Create container
     const container = document.createElement("div");
+    if (onPhone()) {
+        container.style.margin = "20px 0";
+    } else {
+        container.style.margin = "20px auto";
+    }
     container.classList.add("menu-container");
 
+    // Desktop navbar
     const highlight = document.createElement("div");
     highlight.classList.add("menu-highlight");
 
-    // Desktop Navbar
     const navbar = document.createElement("div");
     navbar.classList.add("menu-navbar");
     navbar.appendChild(highlight);
 
-    // Mobile Dropdown
-    const dropdownWrapper = document.createElement("p");
-    dropdownWrapper.classList.add("menu-dropdown");
-
-    const dropdownButton = document.createElement("p");
-    dropdownButton.classList.add("menu-dropdown-button");
-    dropdownButton.onclick = toggleDropdown;
-
-    const dropdownMenu = document.createElement("div");
-    dropdownMenu.classList.add("menu-dropdown-menu");
-    let chosen = items[0];
-    // Populate both navbar & dropdown
     items.forEach((item, index) => {
-        // Navbar Items
         const navItem = document.createElement("p");
         navItem.classList.add("menu-item");
         navItem.textContent = item;
-        navItem.onclick = () => {
-            selectMenuItem(index, items);
-            chosen = navItem;
-        }
+        navItem.onclick = () => selectMenuItem(index, items);
         navbar.appendChild(navItem);
     });
 
-    // Append dropdown elements
-    dropdownWrapper.appendChild(dropdownButton);
-    dropdownWrapper.appendChild(dropdownMenu);
+    // Mobile dropdown
+    const dropdown = document.createElement("div");
+    dropdown.classList.add("menu-dropdown");
 
-    // Append everything to the container
+    const dropdownWrapper = document.createElement("div");
+    dropdownWrapper.classList.add("menu-mobile-wrapper");
+
+    const dropdownTop = document.createElement("div");
+    dropdownTop.classList.add("menu-dropdown-top");
+    dropdownTop.innerHTML = `${items[0]} <span>+</span>`;
+    dropdownTop.onclick = () => {
+        dropdown.classList.toggle("open");
+    };
+
+    const dropdownItems = document.createElement("div");
+    dropdownItems.classList.add("menu-dropdown-items");
+
+    function updateDropdown(currentIndex) {
+        dropdownItems.innerHTML = "";
+        items.forEach((item, i) => {
+            if (i !== currentIndex) {
+                const div = document.createElement("div");
+                div.classList.add("menu-dropdown-item");
+                div.textContent = item;
+                div.onclick = () => {
+                    selectMenuItem(i, items);
+                    dropdown.classList.remove("open");
+                };
+                dropdownItems.appendChild(div);
+            }
+        });
+        dropdownTop.innerHTML = `${items[currentIndex]} <span>+</span>`;
+    }
+
+    dropdownWrapper.appendChild(dropdownTop);
+    dropdownWrapper.appendChild(dropdownItems);
+    dropdown.appendChild(dropdownWrapper);
+
+    // Add both to container
     container.appendChild(navbar);
-    container.appendChild(dropdownWrapper);
-
-    // Insert menu where script is placed
+    container.appendChild(dropdown);
     document.currentScript.parentNode.insertBefore(container, document.currentScript);
 
-    // Auto-select the first item
+    // Track selected
+    window.selectedMenuIndex = 0;
     selectMenuItem(0, items);
-    return chosen;
+    updateDropdown(0);
+
+    // Handle resizing
+    window.addEventListener("resize", () => {
+        if (onPhone()) {
+            container.style.margin = "20px 0";
+        } else {
+            container.style.margin = "20px auto";
+        }
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("open");
+        }
+    });
+
+    // Expose updateDropdown to selection function
+    window._menuUpdateDropdown = updateDropdown;
 }
 
-// Menu Selection Logic
+// Selection logic
 function selectMenuItem(index, items) {
     const menuItems = document.querySelectorAll(".menu-item");
     const highlight = document.querySelector(".menu-highlight");
     const navbar = document.querySelector(".menu-navbar");
-    const dropdownButton = document.querySelector(".menu-dropdown-button");
-    const dropdownMenu = document.querySelector(".menu-dropdown-menu");
+    const dropdown = document.querySelector(".menu-dropdown");
+
+    window.selectedMenuIndex = index;
 
     if (window.innerWidth <= 768) {
-        document.querySelector(".menu-navbar").style.display = "none";
-        document.querySelector(".menu-dropdown").style.display = "block";
-
-        // Update dropdown button text with selected item
-        dropdownButton.innerHTML = `${items[index]} <span>+</span>`;
-
-        // Regenerate the dropdown menu (excluding selected item)
-        dropdownMenu.innerHTML = "";
-        items.forEach((item, i) => {
-            if (i !== index) {
-                const dropdownItem = document.createElement("div");
-                dropdownItem.textContent = item;
-                dropdownItem.onclick = () => selectMenuItem(i, items);
-                dropdownMenu.appendChild(dropdownItem);
-            }
-        });
-
-        closeDropdown();
+        navbar.style.display = "none";
+        dropdown.style.display = "block";
+        if (window._menuUpdateDropdown) {
+            window._menuUpdateDropdown(index);
+        }
     } else {
-        document.querySelector(".menu-navbar").style.display = "flex";
-        document.querySelector(".menu-dropdown").style.display = "none";
+        navbar.style.display = "flex";
+        dropdown.style.display = "none";
+
+        const selectedItem = menuItems[index];
+        const boundingBox = selectedItem.getBoundingClientRect();
+        const navbarBox = navbar.getBoundingClientRect();
+        const borderWidth = parseFloat(getComputedStyle(navbar).borderWidth);
+        const leftPosition = boundingBox.left - navbarBox.left - borderWidth;
+        const width = boundingBox.width;
+
+        highlight.style.width = `${width}px`;
+        highlight.style.transform = `translateX(${leftPosition}px)`;
+
+        menuItems.forEach(item => item.style.color = "white");
+        selectedItem.style.color = "black";
     }
 
-    const selectedItem = menuItems[index];
-    const boundingBox = selectedItem.getBoundingClientRect();
-    const navbarBox = navbar.getBoundingClientRect();
-    const borderWidth = parseFloat(getComputedStyle(navbar).borderWidth);
-    const leftPosition = boundingBox.left - navbarBox.left - borderWidth;
-    const width = boundingBox.width;
-
-    highlight.style.width = `${width}px`;
-    highlight.style.transform = `translateX(${leftPosition}px)`;
-
-    menuItems.forEach(item => item.style.color = "white");
-    selectedItem.style.color = "black";
-
-    // ✅ Dispatch a custom event with the selected item
     const event = new CustomEvent("menuItemSelected", {
         detail: { selectedItem: items[index] }
     });
