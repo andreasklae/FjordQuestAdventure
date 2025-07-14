@@ -1,0 +1,18 @@
+body {
+    background-image: url('bilder/Forside/alesund.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#transportContent {
+    padding: 40px;
+    border-radius: 40px;
+    background-color: #00000066;
+    backdrop-filter: blur(16px);
+    width: 90vw;
+    max-width: 900px;
+    margin: 50px auto;
+    box-sizing: border-box;
+    text-align: left;
+}
