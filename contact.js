@@ -4,11 +4,6 @@ let email = "support@fqa.no"
 // your phone nmbr
 let phone = "+47 123 45 678"
 
-// Function to check if the device is a phone
-const onPhone = function() {
-    return window.innerWidth < 700;
-};
-
 function setFooter(){
     if(onPhone()){
         document.getElementById("footerContent").innerHTML = `
