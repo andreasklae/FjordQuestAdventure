@@ -169,7 +169,6 @@ else{
                 <h3> <a href="discover.html">What we offer</a> </h3>
                 <h3> <a href="contact.html">Contact us</a> </h3>
                 <h3> <a href="contact.html">Accomodation</a> </h3>
-                <h3> <a href="transport.html">Transport</a> </h3>
                 `
         }
         else{
