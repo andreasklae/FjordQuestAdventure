@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-# FjordQuestAdventure
-Code and documentation for website of Fjord Quest Adventure.
-Currently unfinished and in development.
-
-Devloped by Andreas Klæboe
-=======
 # Fjord Quest Adventure - Luxury Travel Website
 
 A premium React-based website for **Fjord Quest Adventure**, a Norwegian luxury travel company specializing in high-end vacation experiences for discerning travelers.
