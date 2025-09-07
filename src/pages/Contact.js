@@ -136,7 +136,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-luxury-800 border border-luxury-700 rounded-lg text-luxury-100 placeholder-luxury-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="+47 123 45 678"
+                    placeholder="+47 978 99 507"
                   />
                 </div>
               </div>
@@ -309,7 +309,7 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-luxury-100 mb-2">Email</h3>
-              <p className="text-luxury-300">info@fjordquest.no</p>
+              <p className="text-luxury-300">Hello@fjordquestadventure.no</p>
             </div>
 
             <div className="card p-6 text-center">
@@ -317,7 +317,7 @@ const Contact = () => {
                 <Phone className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-luxury-100 mb-2">Phone</h3>
-              <p className="text-luxury-300">+47 123 45 678</p>
+              <p className="text-luxury-300">+47 978 99 507</p>
             </div>
 
             <div className="card p-6 text-center">

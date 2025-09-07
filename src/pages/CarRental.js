@@ -155,7 +155,7 @@ const CarRental = () => {
     {
       icon: MapPin,
       title: t('carRental.features.items.delivery', translations.carRental.features.items.delivery),
-      description: 'We bring the car to you, anywhere in Norway'
+      description: 'We bring the car to you, anywhere in Møre og Romsdal'
     },
     {
       icon: Phone,
@@ -319,19 +319,19 @@ const CarRental = () => {
                 </div>
               </div>
 
-              {/* Thumbnail Gallery - All 21 optimized thumbnails */}
-              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-7 gap-2">
-                {porscheThumbnails.map((thumbnail, index) => (
+              {/* Thumbnail Gallery - Show only 4 thumbnails */}
+              <div className="grid grid-cols-4 gap-2">
+                {porscheThumbnails.slice(1, 5).map((thumbnail, index) => (
                   <div
-                    key={index}
+                    key={index + 1}
                     className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-200 ${
-                      index === currentImage ? 'ring-2 ring-primary-400 scale-105' : 'hover:scale-105'
+                      index + 1 === currentImage ? 'ring-2 ring-primary-400 scale-105' : 'hover:scale-105'
                     }`}
-                    onClick={() => setCurrentImage(index)}
+                    onClick={() => setCurrentImage(index + 1)}
                   >
                     <ImageContainer
                       src={thumbnail}
-                      alt={`Porsche view ${index + 1}`}
+                      alt={`Porsche view ${index + 2}`}
                       className="w-full"
                       aspectRatio="1/1"
                     />
@@ -339,12 +339,15 @@ const CarRental = () => {
                 ))}
               </div>
 
-              {/* View All Button */}
+              {/* Expand Gallery Button */}
               <button
                 onClick={() => openGallery(0)}
-                className="btn-secondary w-full"
+                className="btn-secondary w-full flex items-center justify-center space-x-2"
               >
-                {t('common.viewGallery', translations.common.viewGallery)} ({porscheImages.length} Photos)
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5v4m0-4h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+                <span>View All {porscheImages.length} Photos</span>
               </button>
             </div>
           </div>

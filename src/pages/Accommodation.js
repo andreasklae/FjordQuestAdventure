@@ -216,34 +216,46 @@ const Accommodation = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {hotels.map((accommodation, index) => (
                   <div key={index} className="card overflow-hidden">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      <div className="order-2 lg:order-1 p-6">
-                        <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-2xl font-bold text-luxury-100">
-                            {accommodation.name}
-                          </h3>
-                          {accommodation.website && (
-                            <a
-                              href={accommodation.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary-400 hover:text-primary-300 transition-colors"
-                            >
-                              <ExternalLink className="h-5 w-5" />
-                            </a>
-                          )}
-                        </div>
-
-                        {accommodation.location && (
-                          <div className="flex items-center mb-4">
-                            <MapPin className="h-4 w-4 text-primary-400 mr-2" />
-                            <span className="text-sm text-luxury-300">{accommodation.location}</span>
-                          </div>
+                    <div className="p-6">
+                      {/* Hotel Name */}
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-2xl font-bold text-luxury-100">
+                          {accommodation.name}
+                        </h3>
+                        {accommodation.website && (
+                          <a
+                            href={accommodation.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary-400 hover:text-primary-300 transition-colors"
+                          >
+                            <ExternalLink className="h-5 w-5" />
+                          </a>
                         )}
+                      </div>
 
-                        <p className="text-luxury-300 mb-4 text-sm leading-relaxed">
-                          {accommodation.description}
-                        </p>
+                      {/* Address */}
+                      {accommodation.location && (
+                        <div className="flex items-center mb-6">
+                          <MapPin className="h-4 w-4 text-primary-400 mr-2" />
+                          <span className="text-sm text-luxury-300">{accommodation.location}</span>
+                        </div>
+                      )}
+
+                      {/* Photo */}
+                      <div className="mb-6">
+                        <ImageContainer
+                          src={accommodation.images[0]}
+                          alt={accommodation.name}
+                          className="w-full rounded-lg"
+                          aspectRatio="4/3"
+                        />
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-luxury-300 mb-6 text-sm leading-relaxed">
+                        {accommodation.description}
+                      </p>
 
                         {accommodation.roomTypes.length > 0 && (
                           <div className="mb-4">
@@ -280,20 +292,10 @@ const Accommodation = () => {
                           </div>
                         )}
 
-                        <div className="mt-6">
-                          <Link to="/contact" className="btn-primary w-full block text-center">
-                            {t('common.bookNow', translations.common.bookNow)}
-                          </Link>
-                        </div>
-                      </div>
-
-                      <div className="order-1 lg:order-2">
-                        <ImageContainer
-                          src={accommodation.images[0]}
-                          alt={accommodation.name}
-                          className="w-full"
-                          aspectRatio="4/3"
-                        />
+                      <div className="mt-6">
+                        <Link to="/contact" className="btn-primary w-full block text-center">
+                          {t('common.bookNow', translations.common.bookNow)}
+                        </Link>
                       </div>
                     </div>
                   </div>

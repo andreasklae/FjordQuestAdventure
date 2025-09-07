@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Users, AlertCircle } from 'lucide-react';
+import { MapPin, Clock, Users, AlertCircle, Mountain, Bike, Waves, Snowflake, Car, Plane } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 import ImageContainer from '../components/common/ImageContainer';
@@ -39,15 +39,38 @@ const Activities = () => {
     const images = {
       'Hiking': '/images/Nature/panorama_geiranger.jpg',
       'Biking': '/images/Nature/trollstigen_activities.jpg',
-      'Kayaking': '/images/Nature/geirangerfjorden_daytrips.jpg',
-      'Other Water Activities': '/images/Nature/geirangerfjorden_daytrips.jpg',
-      'City Walks': '/images/front page background image.jpeg',
-      'Other Activities': '/images/Nature/panorama_geiranger.jpg',
+      'Water Activities': '/images/Nature/geirangerfjorden_daytrips.jpg',
+      'Guided Walk through Ålesund': '/images/front page background image.jpeg',
       'Winter Activities': '/images/Accommodations/chalet stranda/ski resort/Emil Sollie_EKS_5028.JPG',
       'Private Zodiac Charter': '/images/Nature/geirangerfjorden_daytrips.jpg',
-      'Sightseeing with Driver/Guide': '/images/Nature/panorama_geiranger.jpg'
+      'Sightseeing with Driver/Guide': '/images/Nature/panorama_geiranger.jpg',
+      'Helicopter Sightseeing': '/images/Nature/trollveggen_aviation.jpg'
     };
     return images[categoryName] || '/images/Nature/panorama_geiranger.jpg';
+  };
+
+  const getActivityIcon = (categoryName) => {
+    const icons = {
+      'Hiking': Mountain,
+      'Biking': Bike,
+      'Water Activities': Waves,
+      'Guided Walk through Ålesund': Users,
+      'Winter Activities': Snowflake,
+      'Private Zodiac Charter': Waves,
+      'Sightseeing with Driver/Guide': Car,
+      'Helicopter Sightseeing': Plane
+    };
+    return icons[categoryName] || Users;
+  };
+
+  const getActivityLink = (categoryName) => {
+    const links = {
+      'Hiking': '/activities/hiking',
+      'Biking': '/activities/biking',
+      'Water Activities': '/activities/water-activities',
+      'Helicopter Sightseeing': '/aviation'
+    };
+    return links[categoryName] || null;
   };
 
   return (
@@ -70,6 +93,22 @@ const Activities = () => {
             </h1>
             <p className="text-xl text-luxury-300 max-w-3xl mx-auto">
               {t('home.services.activities.description', translations.home.services.activities.description)}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Transport Information */}
+      <section className="py-12 bg-luxury-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Car className="h-6 w-6 text-primary-400 mr-3" />
+              <h2 className="text-2xl font-bold text-luxury-100">Transport Information</h2>
+            </div>
+            <p className="text-lg text-luxury-300 max-w-3xl mx-auto">
+              All activities include convenient transport service. We provide pickup and drop-off from your accommodation, 
+              with an average travel time of ±30 minutes each way to activity locations.
             </p>
           </div>
         </div>
@@ -129,6 +168,30 @@ const Activities = () => {
                     </div>
                   )}
 
+                  {/* Route Information for Aviation */}
+                  {category.route && (
+                    <div className="mb-4">
+                      <div className="flex items-center mb-2">
+                        <MapPin className="h-4 w-4 text-primary-400 mr-2" />
+                        <span className="text-sm font-medium text-luxury-200">
+                          Flight Route
+                        </span>
+                      </div>
+                      <div className="bg-luxury-800 p-3 rounded-lg">
+                        <span className="text-sm text-luxury-300">{category.route}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Special Description for Activities with Subpages */}
+                  {category.hasSubpage && category.description && (
+                    <div className="mb-4">
+                      <p className="text-sm text-luxury-300 leading-relaxed">
+                        {category.description}
+                      </p>
+                    </div>
+                  )}
+
                   {/* Locations */}
                   {category.locations && (
                     <div className="mb-4">
@@ -152,11 +215,8 @@ const Activities = () => {
                           // Handle object of locations with activities (like Hiking, Biking)
                           Object.entries(category.locations).map(([location, activities]) => (
                             <div key={location} className="bg-luxury-800 p-3 rounded-lg">
-                              <div className="font-medium text-luxury-100 mb-1">
+                              <div className="font-medium text-luxury-100">
                                 {location}
-                              </div>
-                              <div className="text-sm text-luxury-300">
-                                {Array.isArray(activities) ? activities.join(', ') : activities}
                               </div>
                             </div>
                           ))
@@ -169,7 +229,7 @@ const Activities = () => {
                   {category.activities && (
                     <div className="mb-4">
                       <div className="flex items-center mb-2">
-                        <Users className="h-4 w-4 text-primary-400 mr-2" />
+                        {React.createElement(getActivityIcon(category.name), { className: "h-4 w-4 text-primary-400 mr-2" })}
                         <span className="text-sm font-medium text-luxury-200">
                           Activities Available
                         </span>
@@ -200,6 +260,11 @@ const Activities = () => {
                   )}
 
                   <div className="mt-6">
+                    {getActivityLink(category.name) && (
+                      <Link to={getActivityLink(category.name)} className="w-full btn-secondary block text-center mb-3">
+                        Learn More & Details
+                      </Link>
+                    )}
                     <Link to="/contact" className="w-full btn-primary block text-center">
                       {t('common.bookNow', translations.common.bookNow)}
                     </Link>

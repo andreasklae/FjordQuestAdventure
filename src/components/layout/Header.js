@@ -15,7 +15,6 @@ const Header = () => {
     { name: t('nav.activities', translations.nav.activities), href: '/activities' },
     { name: t('nav.carRental', translations.nav.carRental), href: '/car-rental' },
     { name: t('nav.accommodation', translations.nav.accommodation), href: '/accommodation' },
-    { name: t('nav.aviation', translations.nav.aviation), href: '/aviation' },
     { name: t('nav.contact', translations.nav.contact), href: '/contact' }
   ];
 

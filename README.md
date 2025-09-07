@@ -158,8 +158,8 @@ Features Mercedes V-Class shuttle service:
 
 ## 📞 Contact Information
 
-- **Email**: info@fjordquest.no
-- **Phone**: +47 123 45 678
+- **Email**: Hello@fjordquestadventure.no
+- **Phone**: +47 978 99 507
 - **Location**: Ålesund, Norway
 - **Response Time**: Within 24 hours
 

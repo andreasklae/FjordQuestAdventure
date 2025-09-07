@@ -85,7 +85,7 @@ export const translations = {
   carRental: {
     title: { en: 'Porsche Rental', no: 'Porsche Utleie' },
     subtitle: { en: 'Experience Norway in Ultimate Style', no: 'Opplev Norge i Ultimate Stil' },
-    price: { en: '6,500 NOK per day', no: '6 500 NOK per dag' },
+    price: { en: 'From 6,500 NOK per day', no: 'fra 6 500 NOK per dag' },
     description: { 
       en: 'Drive through Norway\'s stunning landscapes in a premium Porsche. Our exclusive rental service offers the perfect blend of luxury, performance, and Norwegian adventure.',
       no: 'Kjør gjennom Norges fantastiske landskap i en premium Porsche. Vår eksklusive utleieservice tilbyr den perfekte blandingen av luksus, ytelse og norsk eventyr.'

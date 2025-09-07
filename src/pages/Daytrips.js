@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import { Clock, MapPin, ChevronDown, ChevronUp, Users } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 import ImageContainer from '../components/common/ImageContainer';
@@ -60,6 +60,22 @@ const Daytrips = () => {
             </h1>
             <p className="text-xl text-luxury-300 max-w-3xl mx-auto">
               {t('home.services.daytrips.description', translations.home.services.daytrips.description)}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Guided Tours Information */}
+      <section className="py-12 bg-luxury-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Users className="h-6 w-6 text-primary-400 mr-3" />
+              <h2 className="text-2xl font-bold text-luxury-100">Professional Guided Tours</h2>
+            </div>
+            <p className="text-lg text-luxury-300 max-w-3xl mx-auto">
+              All our daytrips are led by experienced local guides who share fascinating stories, 
+              cultural insights, and ensure you experience the best of Norway's natural wonders safely and comfortably.
             </p>
           </div>
         </div>

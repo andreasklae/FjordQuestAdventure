@@ -36,13 +36,6 @@ const Home = () => {
       icon: Car,
       image: '/images/porche/optimized/FNP08686-Forbedret-NR.jpg',
       link: '/car-rental'
-    },
-    {
-      title: t('aviation.title', translations.aviation.title),
-      description: t('aviation.description', translations.aviation.description),
-      icon: Plane,
-      image: '/images/Nature/trollveggen_aviation.jpg',
-      link: '/aviation'
     }
   ];
 
@@ -104,6 +97,10 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-luxury-100 mb-6">
               {t('home.services.title', translations.home.services.title)}
             </h2>
+            <p className="text-lg text-luxury-300 max-w-3xl mx-auto mb-8">
+              Every experience is completely tailor-made and adaptable to your preferences. 
+              We work closely with you to create the perfect Norwegian adventure that matches your interests, timeline, and style.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -14,6 +14,9 @@ import CarRental from './pages/CarRental';
 import Accommodation from './pages/Accommodation';
 import Aviation from './pages/Aviation';
 import Contact from './pages/Contact';
+import Hiking from './pages/activities/Hiking';
+import Biking from './pages/activities/Biking';
+import WaterActivities from './pages/activities/WaterActivities';
 
 function AppContent() {
   const isUnderConstruction = useUnderConstruction();
@@ -33,6 +36,9 @@ function AppContent() {
             <Route path="/" element={<Home />} />
             <Route path="/daytrips" element={<Daytrips />} />
             <Route path="/activities" element={<Activities />} />
+            <Route path="/activities/hiking" element={<Hiking />} />
+            <Route path="/activities/biking" element={<Biking />} />
+            <Route path="/activities/water-activities" element={<WaterActivities />} />
             <Route path="/car-rental" element={<CarRental />} />
             <Route path="/accommodation" element={<Accommodation />} />
             <Route path="/aviation" element={<Aviation />} />

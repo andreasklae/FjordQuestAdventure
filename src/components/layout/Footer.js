@@ -13,7 +13,6 @@ const Footer = () => {
     { name: t('nav.activities', translations.nav.activities), href: '/activities' },
     { name: t('nav.carRental', translations.nav.carRental), href: '/car-rental' },
     { name: t('nav.accommodation', translations.nav.accommodation), href: '/accommodation' },
-    { name: t('nav.aviation', translations.nav.aviation), href: '/aviation' },
     { name: t('nav.contact', translations.nav.contact), href: '/contact' }
   ];
 
@@ -63,11 +62,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary-400" />
-                <span className="text-luxury-300 text-sm">info@fjordquest.no</span>
+                <span className="text-luxury-300 text-sm">Hello@fjordquestadventure.no</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary-400" />
-                <span className="text-luxury-300 text-sm">+47 123 45 678</span>
+                <span className="text-luxury-300 text-sm">+47 978 99 507</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-primary-400" />

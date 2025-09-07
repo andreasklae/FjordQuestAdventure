@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "name": "Hiking",
+      "durations": [
+        "2-3 hours",
+        "4-6 hours",
+        "6-10 hours"
+      ],
+      "locations": {
+        "Alesund": [
+          "Sukkertoppen",
+          "Aksla active walk",
+          "God\u00f8ya"
+        ],
+        "Storfjord Hotel": [
+          "Hautua",
+          "Frostatind",
+          "Giskemonibba",
+          "Lauparen"
+        ],
+        "Valldal/Juvet": [
+          "Rugga",
+          "Mefjellet",
+          "Store Trolltind"
+        ],
+        "Stranda/Union \u00d8ye": [
+          "Urke",
+          "Urkeegga",
+          "Saska",
+          "Slogen"
+        ],
+        "Andalsnes": [
+          "Litlefjellet",
+          "Nesaksla",
+          "Romsdalseggen"
+        ],
+        "Geiranger": [
+          "Vesteraas Gaard",
+          "Geitfonnegga",
+          "Skagefl\u00e5"
+        ]
+      }
+    },
+    {
+      "name": "Biking",
+      "durations": [
+        "2-3 hours",
+        "4-6 hours"
+      ],
+      "locations": {
+        "Alesund": [
+          "Art Nouveau e-bike tour",
+          "E-bike and hike"
+        ],
+        "Storfjord Hotel": [
+          "Valle Seatra",
+          "Svartloken loop"
+        ],
+        "Valldal/Juvet": [
+          "Nysaetra",
+          "Trollstigen"
+        ],
+        "Stranda/Union \u00d8ye": [
+          "Norangsdalen",
+          "Flofjellet"
+        ],
+        "Andalsnes": [
+          "Venjedalen",
+          "Trollstigen"
+        ],
+        "Geiranger": [
+          "Vesteraas & Flydalsjuvet",
+          "Dalsnibba"
+        ]
+      }
+    },
+    {
+      "name": "Water Activities",
+      "activities": [
+        "Kayaking (2-3 hours)",
+        "Kayaking (4-6 hours)", 
+        "Rafting (3-4 hours)",
+        "Canyoning (3-4 hours)",
+        "Snorkeling (3-4 hours)"
+      ]
+    },
+    {
+      "name": "Guided Walk through \u00c5lesund",
+      "activities": [
+        "Art Nouveau architecture tour",
+        "Historical city center exploration",
+        "Local stories and cultural insights"
+      ],
+      "duration": "1.5\u20132 hours"
+    },
+    {
+      "name": "Winter Activities",
+      "activities": [
+        "Cross Country Skiing (2-3 hours)",
+        "Snowshoeing (3-6 hours)",
+        "Ski Touring (3-8 hours)",
+        "Winter Kayaking (2 hours)"
+      ],
+    },
+    {
+      "name": "Sightseeing with Driver/Guide",
+      "durations": [
+        "1\u20134 hours",
+        "4\u20138 hours"
+      ]
+    },
+    {
+      "name": "Private Zodiac Charter",
+      "activities": [
+        "Fjord Safari (1 hour)",
+        "Sea Rafting (1 hour)",
+        "Fjord Safari (2 hours)",
+        "Wildlife Sea Safari (2 hours)"
+      ]
+    },
+    {
+      "name": "Helicopter Sightseeing",
+      "duration": "1 Hour Flight",
+      "route": "Ålesund → Geiranger → Hellesylt → Hjørundfjorden",
+      "description": "Soar above Norway's most spectacular fjords and mountains on this unforgettable helicopter journey.",
+      "hasSubpage": true
+    }
+  ],
+  "terms": {
+    "cancellation": [
+      "Free cancellation until 15 days before the activity.",
+      "50% charged if cancelled 7\u201315 days prior.",
+      "100% charged if cancelled within 7 days of activity."
+    ],
+    "payment": [
+      "20% deposit invoiced upon booking confirmation.",
+      "Remaining amount due 15 days before activity date."
+    ],
+    "liability": "Uteguiden AS is not liable for losses, injuries, or delays due to weather, strikes, or circumstances beyond control."
+  }
+}
