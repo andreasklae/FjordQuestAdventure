@@ -4,7 +4,7 @@ import React, { createContext, useContext } from 'react';
 const UnderConstructionContext = createContext();
 
 // Set this to true to enable "Under Construction" mode
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = false;
 
 export function UnderConstructionProvider({ children }) {
   return (
